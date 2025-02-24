@@ -71,7 +71,8 @@ const Assets = {
 	Unocss: a('unocss.svg'),
 	Ruvy: a('ruvy.svg'),
 	Postcss: a('postcss.svg'),
-	Informed: a('informed.png')
+	Informed: a('informed.png'), 
+	SUT: a('sut.png')
 };
 
 export default Assets;
