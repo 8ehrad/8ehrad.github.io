@@ -3,28 +3,30 @@ import type { Education } from '../types';
 
 export const items: Array<Education> = [
 	{
-		degree: 'Bachelor degree of Computer Science',
-		description: '',
-		location: 'Tunisia',
+		degree: "Master's degree of Data Science",
+		description: 'Fast-paced wholesome course in Data Science, covering a variety of subjects in the realm of Data Science, \
+			including machine learning, deep learning, statistical modelling, data engineering, and big data. I finished with a high distinction, \
+			ranking 3rd in our cohort among 120 students.',
+		location: 'United Kingdom',
 		logo: Assets.Unknown,
 		name: '',
 		organization: 'Lancaster University',
-		period: { from: new Date(2020, 0, 1), to: new Date(2022, 5, 1) },
+		period: { from: new Date(2022, 10, 1), to: new Date(2023, 9, 30) },
 		shortDescription: '',
 		slug: 'dummy-education-item',
-		subjects: ['C', 'Algorithm', 'Algebra', 'Python', 'C++', 'Java', 'English']
+		subjects: ['Python', 'R', 'Machine Learning', 'Deep Learning', 'Statistics', 'NLP', 'Computer Vision', 'Big Data']
 	},
 	{
-		degree: 'PhD of Computer Science',
+		degree: 'Bachelor degree of Computer Engineering',
 		description: '',
-		location: 'USA',
+		location: 'Iran',
 		logo: Assets.Unknown,
 		name: '',
-		organization: 'MIT',
-		period: { from: new Date(2023, 0, 1) },
+		organization: 'Sharif University of',
+		period: { from: new Date(2016, 9, 23), to: new Date(2021, 7, 28) },
 		shortDescription: '',
 		slug: 'dummy-education-item-2',
-		subjects: ['Assembly', 'Rust', 'Computer Architecture', 'Algorithms and Data structures']
+		subjects: ['C/C++', 'SQL', 'Programming', 'Algorithms and Data structures', 'Probability and Statistics', 'Linear Algebra', 'Databases']
 	}
 ];
 
