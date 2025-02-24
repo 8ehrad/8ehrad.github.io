@@ -18,7 +18,7 @@ export const items: Array<Experience> = [
 		contract: ContractType.FullTime,
 		type: 'Data Science/Software Development',
 		location: 'Manchester',
-		period: { from: new Date(2023, 11, 21) },
+		period: { from: new Date(2023, 11, 1) },
 		skills: getSkills('ts', 'js'),
 		name: 'Technical Consultant',
 		color: 'red',
