@@ -7,9 +7,13 @@ export const items: Array<Experience> = [
 		slug: 'technical-associate',
 		company: 'Informed Solutions',
 		description: `
-- Creating awesome tools for developers  
-- Developing scalable applications  
-- Improving CI/CD pipelines  
+- Automated farmers’ funding validation pipeline leveraging NLP and computer vision to reduce manual review time by 2 weeks per case.
+- Built a Power BI dashboard for delivery managers and recruitment team to make real-time data-driven decisions.
+- Optimised database design and data modelling, integrating it into interactive dashboards to provide stakeholders with actionable insights for efficient project and resource allocation.
+- Developed a scalable ETL pipeline using Airbyte and DBT for the National Digital Twin Programme (NDTP) to extract EPC data, linking it to house postcodes for real-time visualisation and energy efficiency insights.
+- Developed cloud-based web applications and REST APIs following object-oriented programming principles.
+- Applied agile practices with Jira and Git to manage CI/CD pipelines for streamlined integration and testing.
+- Provided continuous client communication, consultancy, and support to build strong relationships. 
     `,
 		contract: ContractType.FullTime,
 		type: 'Data Science/Software Development',
@@ -20,7 +24,9 @@ export const items: Array<Experience> = [
 		color: 'red',
 		links: [],
 		logo: Assets.Informed,
-		shortDescription: 'Creating awesome tools for developers.'
+		shortDescription: 'I have worked as a Technical Consultant across data science and software development, delivering solutions for various clients. \
+			My work involves building data-driven systems, developing scalable pipelines, and designing cloud-based applications. \
+			I specialise in leveraging AI, data science, and analytics to optimise processes and drive impactful business outcomes while collaborating closely with stakeholders to ensure effective solutions.'
 	},
 	{
 		slug: 'software-freelance',
