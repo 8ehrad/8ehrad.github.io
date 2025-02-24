@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.4be7f663.js";import{g as t}from"./skills.69647a6c.js";import{C as i}from"./types.1ebf2f37.js";const o=[{slug:"technical-associate",company:"Informed Solutions",description:`
+import{A as e}from"./UIcon.9fdecb8b.js";import{g as t}from"./skills.9d79246c.js";import{C as i}from"./types.1ebf2f37.js";const o=[{slug:"technical-associate",company:"Informed Solutions",description:`
 - Automated farmers’ funding validation pipeline leveraging NLP and computer vision to reduce manual review time by 2 weeks per case.
 - Built a Power BI dashboard for delivery managers and recruitment team to make real-time data-driven decisions.
 - Optimised database design and data modelling, integrating it into interactive dashboards to provide stakeholders with actionable insights for efficient project and resource allocation.
