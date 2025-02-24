@@ -19,7 +19,7 @@ export const items: Array<Experience> = [
 		name: 'Technical Consultant',
 		color: 'red',
 		links: [],
-		logo: Assets.Unknown,
+		logo: Assets.Informed,
 		shortDescription: 'Creating awesome tools for developers.'
 	},
 	{
