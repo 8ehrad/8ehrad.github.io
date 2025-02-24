@@ -18,7 +18,7 @@ export const items: Array<Experience> = [
 		contract: ContractType.FullTime,
 		type: 'Data Science/Software Development',
 		location: 'Manchester',
-		period: { from: new Date(2023, 11, 1) },
+		period: { from: new Date(2023, 10, 21) },
 		skills: getSkills('ts', 'js'),
 		name: 'Technical Consultant',
 		color: 'red',
@@ -30,35 +30,57 @@ export const items: Array<Experience> = [
 	{
 		slug: 'data-science-placement',
 		company: 'Informed Solutions',
-		description: '',
+		description: `
+- Automated planning applications by extracting key information from unstructured documents to reduce review time.
+- Utilised keyword extraction and LLM-based summarisation to create concise document summaries for assessors.
+    `,
 		contract: ContractType.Internship,
 		type: 'Data Science',
 		location: 'Manchester',
-		period: { from: new Date(2022, 6, 5), to: new Date(2022, 9, 30)},
+		period: { from: new Date(2022, 5, 5), to: new Date(2022, 8, 30)},
 		skills: getSkills('svelte', 'ts', 'sass', 'css', 'html', 'js'),
 		name: 'Data Science Placement',
 		color: 'blue',
 		links: [],
 		logo: Assets.Informed,
-		shortDescription: 'During my data science placement, I worked on automating document analysis using NLP and machine learning to streamline information extraction and improve assessment efficiency.'
+		shortDescription: 'During my data science placement, I Extracted key information from diverse and unstructured documents, utilising state-of-the-art NLP methods.'
 	},
 	{
-		slug: 'software-freelance-junior',
-		company: 'Self-employed',
+		slug: 'data-scientist',
+		company: 'Mizan Gostaran Sharif',
 		description: `
-- Automated planning applications by extracting key information from unstructured documents to reduce review time.
-- Utilised keyword extraction and LLM-based summarisation to create concise document summaries for assessors.
+- Developed a scalable NLP pipeline, automating resume processing and increasing throughput from 26K to 500K+ CVs.
+- Clustered semi-structured and unstructured resume data to optimise candidate-job matching based on relevance.
     `,
-		contract: ContractType.Freelance,
-		type: 'Software Development',
-		location: 'Home',
-		period: { from: new Date(2022, 0, 1), to: new Date() },
+		contract: ContractType.FullTime,
+		type: 'Data Science',
+		location: 'Tehran',
+		period: { from: new Date(2022, 5, 1), to: new Date(2022, 7, 30) },
 		skills: getSkills('css', 'html', 'js'),
-		name: 'Junior Freelancer',
+		name: 'Data Scientist',
 		color: 'green',
 		links: [],
 		logo: Assets.Unknown,
-		shortDescription: 'Creating awesome applications for customers.'
+		shortDescription: 'I worked on processing and analysing large volumes of user-generated resumes, leveraging NLP techniques to extract and categorise skill sets. \
+			This contributed to improving candidate matching and enhancing a job recommendation system.'
+	},
+	{
+		slug: 'ml-research-assistant',
+		company: 'Sharif University of Technology',
+		description: `
+- Modelled the spread of COVID-19 using statistical techniques, analysing transmission dynamics between countries.
+- Enabled authorities to make informed decisions regarding travel bans from high-risk countries to limit the spread of the virus.
+    `,
+		contract: ContractType.PartTime,
+		type: 'Machine Learning',
+		location: 'Tehran',
+		period: { from: new Date(2021, 1, 1), to: new Date(2021, 6, 22) },
+		skills: getSkills('css', 'html', 'js'),
+		name: 'ML Research Assistant',
+		color: 'yellow',
+		links: [],
+		logo: Assets.Unknown,
+		shortDescription: 'I analysed COVID-19 transmission dynamics using statistical modelling, providing insights to support data-driven decision-making on travel restrictions and risk assessment.'
 	}
 ];
 
