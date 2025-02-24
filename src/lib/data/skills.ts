@@ -55,6 +55,15 @@ export const items = [
 		category: 'pro-lang'
 	}),
 	defineSkill({
+		slug: 'r',
+		color: 'green',
+		description:
+			'',
+		logo: Assets.R,
+		name: 'R',
+		category: 'pro-lang'
+	}),
+	defineSkill({
 		slug: 'css',
 		color: 'blue',
 		description:
@@ -71,15 +80,6 @@ export const items = [
 		logo: Assets.HTML,
 		name: 'HTML',
 		category: 'markup-style'
-	}),
-	defineSkill({
-		slug: 'r',
-		color: 'green',
-		description:
-			'',
-		logo: Assets.R,
-		name: 'R',
-		category: 'pro-lang'
 	}),
 	defineSkill({
 		slug: 'reactjs',
