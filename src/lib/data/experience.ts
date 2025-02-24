@@ -79,7 +79,7 @@ export const items: Array<Experience> = [
 		name: 'ML Research Assistant',
 		color: 'yellow',
 		links: [],
-		logo: Assets.Unknown,
+		logo: Assets.SUT,
 		shortDescription: 'I analysed COVID-19 transmission dynamics using statistical modelling, providing insights to support data-driven decision-making on travel restrictions and risk assessment.'
 	}
 ];
