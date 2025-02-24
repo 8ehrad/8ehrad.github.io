@@ -4,9 +4,13 @@ import { ContractType, type Experience } from '../types';
 
 export const items: Array<Experience> = [
 	{
-		slug: 'open-sourcer',
-		company: 'Self-employed',
-		description: 'Creating awesome tools for developers.',
+		slug: 'technical-associate',
+		company: 'Informed Solutions',
+		description: `
+- Creating awesome tools for developers  
+- Developing scalable applications  
+- Improving CI/CD pipelines  
+    `,
 		contract: ContractType.SelfEmployed,
 		type: 'Software Development',
 		location: 'Home',
