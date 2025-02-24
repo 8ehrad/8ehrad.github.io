@@ -11,12 +11,12 @@ export const items: Array<Experience> = [
 - Developing scalable applications  
 - Improving CI/CD pipelines  
     `,
-		contract: ContractType.SelfEmployed,
-		type: 'Software Development',
-		location: 'Home',
-		period: { from: new Date() },
+		contract: ContractType.FullTime,
+		type: 'Data Science/Software Development',
+		location: 'Manchester',
+		period: { from: new Date(2023, 11, 21) },
 		skills: getSkills('ts', 'js'),
-		name: 'Open Source Developer',
+		name: 'Technical Consultant',
 		color: 'red',
 		links: [],
 		logo: Assets.Unknown,
