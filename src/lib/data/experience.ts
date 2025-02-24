@@ -25,28 +25,30 @@ export const items: Array<Experience> = [
 		links: [],
 		logo: Assets.Informed,
 		shortDescription: 'I have worked as a Technical Consultant across data science and software development, delivering solutions for various clients. \
-			My work involves building data-driven systems, developing scalable pipelines, and designing cloud-based applications. \
-			I specialise in leveraging AI, data science, and analytics to optimise processes and drive impactful business outcomes while collaborating closely with stakeholders to ensure effective solutions.'
+			My work mainly involves building data-driven solutions and developing cloud-based web applications.'
 	},
 	{
-		slug: 'software-freelance',
-		company: 'Self-employed',
-		description: 'Creating awesome applications for customers.',
-		contract: ContractType.Freelance,
-		type: 'Software Development',
-		location: 'Home',
-		period: { from: new Date() },
+		slug: 'data-science-placement',
+		company: 'Informed Solutions',
+		description: '',
+		contract: ContractType.Internship,
+		type: 'Data Science',
+		location: 'Manchester',
+		period: { from: new Date(2022, 6, 5), to: new Date(2022, 9, 30)},
 		skills: getSkills('svelte', 'ts', 'sass', 'css', 'html', 'js'),
-		name: 'Freelancer',
+		name: 'Data Science Placement',
 		color: 'blue',
 		links: [],
-		logo: Assets.Unknown,
-		shortDescription: 'Creating awesome applications for customers.'
+		logo: Assets.Informed,
+		shortDescription: 'During my data science placement, I worked on automating document analysis using NLP and machine learning to streamline information extraction and improve assessment efficiency.'
 	},
 	{
 		slug: 'software-freelance-junior',
 		company: 'Self-employed',
-		description: 'Creating awesome applications for customers.',
+		description: `
+- Automated planning applications by extracting key information from unstructured documents to reduce review time.
+- Utilised keyword extraction and LLM-based summarisation to create concise document summaries for assessors.
+    `,
 		contract: ContractType.Freelance,
 		type: 'Software Development',
 		location: 'Home',
