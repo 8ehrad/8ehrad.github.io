@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.dfc5bf3c.js";import{g as o}from"./skills.bd3c4192.js";const s=[{slug:"big-data-pipeline",color:"#5e95e3",description:`
+import{A as e}from"./UIcon.633708d1.js";import{g as o}from"./skills.50c7e7a7.js";const s=[{slug:"big-data-pipeline",color:"#5e95e3",description:`
 - Built a Big Data pipeline to analyse Google data centre operations.
 - Deployed a distributed computing environment with Hadoop for large-scale data processing.
     `,shortDescription:"I developed a Big Data pipeline to analyze Google data center operations, leveraging distributed computing to process large-scale datasets efficiently.",logo:e.Lancaster,name:"Big Data Pipeline",period:{from:new Date},skills:o("hadoop"),type:"Data Engineering"},{slug:"Face2Sketch",color:"#ff3e00",description:`
