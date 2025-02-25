@@ -78,6 +78,14 @@ const Assets = {
 	Scikitlearn: a('scikitlearn.svg'),
 	Tensorflow: a('tensorflow.svg'),
 	Powerbi: a('powerbi.png'),
+	Azure: a('azure.svg'),
+	Keras: a('keras.svg'),
+	Huggingface: a('hf.png'),
+	Matplotlib: a('matplotlib.svg'),
+	Seaborn: a('seaborn.svg'),
+	Dotnet: a('dotnet.svg'),
+	Git: a('git.png'),
+	Hadoop: a('hadoop.svg')
 };
 
 export default Assets;

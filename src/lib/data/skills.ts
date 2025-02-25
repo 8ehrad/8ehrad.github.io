@@ -121,7 +121,7 @@ export const items = [
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
 		logo: Assets.CSS,
 		name: 'CSS',
-		category: 'markup-style'
+		category: 'web'
 	}),
 	defineSkill({
 		slug: 'html',
@@ -130,7 +130,7 @@ export const items = [
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
 		logo: Assets.HTML,
 		name: 'HTML',
-		category: 'markup-style'
+		category: 'web'
 	}),
 	defineSkill({
 		slug: 'reactjs',
@@ -148,7 +148,87 @@ export const items = [
 		logo: Assets.Svelte,
 		name: 'Svelte',
 		category: 'library'
-	})
+	}), 
+	defineSkill({
+		slug: 'azure',
+		color: 'blue',
+		description: '',
+		logo: Assets.Azure,
+		name: 'Azure',
+		category: 'tech'
+	}),
+	defineSkill({
+		slug: 'keras',
+		color: 'red',
+		description: '',
+		logo: Assets.Keras,
+		name: 'Keras',
+		category: 'ml'
+	}),
+	defineSkill({
+		slug: 'hf',
+		color: 'yellow',
+		description: '',
+		logo: Assets.Huggingface,
+		name: 'HuggingFace',
+		category: 'ml'
+	}),
+	defineSkill({
+		slug: 'matplotlib',
+		color: 'blue',
+		description: '',
+		logo: Assets.Matplotlib,
+		name: 'Matplotlib',
+		category: 'visualisation'
+	}),
+	defineSkill({
+		slug: 'seaborn',
+		color: 'blue',
+		description: '',
+		logo: Assets.Seaborn,
+		name: 'Seaborn',
+		category: 'visualisation'
+	}),
+	defineSkill({
+		slug: 'dotnet',
+		color: 'purple',
+		description: '',
+		logo: Assets.Dotnet,
+		name: '.Net',
+		category: 'web'
+	}),
+	defineSkill({
+		slug: 'git',
+		color: 'orange',
+		description: '',
+		logo: Assets.Git,
+		name: 'Git',
+		category: 'tech'
+	}),
+	defineSkill({
+		slug: 'hadoop',
+		color: 'yellow',
+		description: '',
+		logo: Assets.Hadoop,
+		name: 'Hadoop',
+		category: 'tech'
+	}),
+	defineSkill({
+		slug: 'aws',
+		color: 'orange',
+		description: '',
+		logo: Assets.AWS,
+		name: 'AWS',
+		category: 'tech'
+	}),
+	defineSkill({
+		slug: 'django',
+		color: 'green',
+		description: '',
+		logo: Assets.Django,
+		name: 'Django',
+		category: 'web'
+	}),
 ] as const;
 
 export const title = 'Skills';
