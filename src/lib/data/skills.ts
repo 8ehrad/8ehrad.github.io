@@ -41,7 +41,7 @@ export const items = [
 	defineSkill({
 		slug: 'python',
 		color: 'yellow',
-		description: '',
+		description: 'A versatile programming language for data science, web development, automation, and AI.',
 		logo: Assets.Python,
 		name: 'Python',
 		category: 'pro-lang'
@@ -50,7 +50,7 @@ export const items = [
 		slug: 'r',
 		color: 'green',
 		description:
-			'',
+			'A statistical computing language widely used for data analysis, visualisation, and machine learning.',
 		logo: Assets.R,
 		name: 'R',
 		category: 'pro-lang'
@@ -59,7 +59,7 @@ export const items = [
 		slug: 'sql',
 		color: 'blue',
 		description:
-			'',
+			'A powerful language for querying, managing, and analysing relational databases.',
 		logo: Assets.SQL,
 		name: 'SQL',
 		category: 'pro-lang'
@@ -67,7 +67,7 @@ export const items = [
 	defineSkill({
 		slug: 'cpp',
 		color: 'blue',
-		description: '',
+		description: 'A high-performance programming language used in systems programming, game development, and AI.',
 		logo: Assets.Cpp,
 		name: 'C++',
 		category: 'pro-lang'
@@ -75,7 +75,7 @@ export const items = [
 	defineSkill({
 		slug: 'csharp',
 		color: 'purple',
-		description: '',
+		description: 'A modern, object-oriented language for building applications on the .NET framework.',
 		logo: Assets.Csharp,
 		name: 'C#',
 		category: 'pro-lang'
@@ -84,7 +84,7 @@ export const items = [
 		slug: 'numpy',
 		color: 'orange',
 		description:
-			'',
+			'A fundamental Python library for numerical computing and handling multi-dimensional arrays.',
 		logo: Assets.Numpy,
 		name: 'Numpy',
 		category: 'ml'
@@ -93,7 +93,7 @@ export const items = [
 		slug: 'pandas',
 		color: 'cyan',
 		description:
-			'',
+			'A Python library for data manipulation and analysis with powerful DataFrame support.',
 		logo: Assets.Pandas,
 		name: 'Pandas',
 		category: 'ml'
@@ -101,7 +101,7 @@ export const items = [
 	defineSkill({
 		slug: 'tensorflow',
 		color: 'orange',
-		description: '',
+		description: 'An open-source framework for machine learning and deep learning applications.',
 		logo: Assets.Tensorflow,
 		name: 'TensorFlow',
 		category: 'ml'
@@ -109,7 +109,7 @@ export const items = [
 	defineSkill({
 		slug: 'scikitlearn',
 		color: 'blue',
-		description: '',
+		description: 'A Python library offering simple, efficient tools for machine learning and statistical modelling.',
 		logo: Assets.Scikitlearn,
 		name: 'Scikit-learn',
 		category: 'ml'
@@ -117,7 +117,7 @@ export const items = [
 	defineSkill({
 		slug: 'powerbi',
 		color: 'yellow',
-		description: '',
+		description: 'A business intelligence tool for data visualisation, reporting, and interactive dashboards.',
 		logo: Assets.Powerbi,
 		name: 'PowerBI',
 		category: 'visualisation'
@@ -126,7 +126,7 @@ export const items = [
 		slug: 'css',
 		color: 'blue',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+			'A stylesheet language for designing and styling web pages.',
 		logo: Assets.CSS,
 		name: 'CSS',
 		category: 'web'
@@ -135,32 +135,15 @@ export const items = [
 		slug: 'html',
 		color: 'orange',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+			'The foundational language for structuring web content.',
 		logo: Assets.HTML,
 		name: 'HTML',
 		category: 'web'
-	}),
-	defineSkill({
-		slug: 'reactjs',
-		color: 'cyan',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
-		logo: Assets.ReactJs,
-		name: 'React Js',
-		category: 'library'
-	}),
-	defineSkill({
-		slug: 'svelte',
-		color: 'orange',
-		description: svelte,
-		logo: Assets.Svelte,
-		name: 'Svelte',
-		category: 'library'
 	}), 
 	defineSkill({
 		slug: 'azure',
 		color: 'blue',
-		description: '',
+		description: "Microsoft's cloud computing platform for scalable applications, AI, and data analytics.",
 		logo: Assets.Azure,
 		name: 'Azure',
 		category: 'tech'
@@ -168,7 +151,7 @@ export const items = [
 	defineSkill({
 		slug: 'keras',
 		color: 'red',
-		description: '',
+		description: 'A high-level neural networks API for building deep learning models with TensorFlow.',
 		logo: Assets.Keras,
 		name: 'Keras',
 		category: 'ml'
@@ -176,7 +159,7 @@ export const items = [
 	defineSkill({
 		slug: 'hf',
 		color: 'yellow',
-		description: '',
+		description: 'A leading AI platform for NLP and machine learning model deployment.',
 		logo: Assets.Huggingface,
 		name: 'HuggingFace',
 		category: 'ml'
@@ -184,7 +167,7 @@ export const items = [
 	defineSkill({
 		slug: 'matplotlib',
 		color: 'blue',
-		description: '',
+		description: 'A Python library for creating static, animated, and interactive visualisations',
 		logo: Assets.Matplotlib,
 		name: 'Matplotlib',
 		category: 'visualisation'
@@ -192,7 +175,7 @@ export const items = [
 	defineSkill({
 		slug: 'seaborn',
 		color: 'blue',
-		description: '',
+		description: 'A Python library for statistical data visualisation based on Matplotlib.',
 		logo: Assets.Seaborn,
 		name: 'Seaborn',
 		category: 'visualisation'
@@ -200,7 +183,7 @@ export const items = [
 	defineSkill({
 		slug: 'dotnet',
 		color: 'purple',
-		description: '',
+		description: 'A framework for building cross-platform applications, web APIs, and cloud-based services.',
 		logo: Assets.Dotnet,
 		name: '.Net',
 		category: 'web'
@@ -208,7 +191,7 @@ export const items = [
 	defineSkill({
 		slug: 'git',
 		color: 'orange',
-		description: '',
+		description: 'A version control system for tracking code changes and collaboration.',
 		logo: Assets.Git,
 		name: 'Git',
 		category: 'tech'
@@ -216,7 +199,7 @@ export const items = [
 	defineSkill({
 		slug: 'hadoop',
 		color: 'yellow',
-		description: '',
+		description: 'A framework for distributed storage and big data processing.',
 		logo: Assets.Hadoop,
 		name: 'Hadoop',
 		category: 'tech'
@@ -224,7 +207,7 @@ export const items = [
 	defineSkill({
 		slug: 'aws',
 		color: 'orange',
-		description: '',
+		description: "Amazon's cloud platform offering scalable computing, storage, and AI services.",
 		logo: Assets.AWS,
 		name: 'AWS',
 		category: 'tech'
@@ -232,10 +215,18 @@ export const items = [
 	defineSkill({
 		slug: 'django',
 		color: 'green',
-		description: '',
+		description: 'A high-level Python web framework for building secure and scalable applications.',
 		logo: Assets.Django,
 		name: 'Django',
 		category: 'web'
+	}),
+	defineSkill({
+		slug: 'docker',
+		color: 'blue',
+		description: 'A platform for containerizing applications to ensure consistent deployment across environments.',
+		logo: Assets.Docker,
+		name: 'Docker',
+		category: 'tech'
 	}),
 ] as const;
 
