@@ -123,12 +123,19 @@ export const items = [
 		category: 'visualisation'
 	}),
 	defineSkill({
-		slug: 'css',
-		color: 'blue',
-		description:
-			'A stylesheet language for designing and styling web pages.',
-		logo: Assets.CSS,
-		name: 'CSS',
+		slug: 'dotnet',
+		color: 'purple',
+		description: 'A framework for building cross-platform applications, web APIs, and cloud-based services.',
+		logo: Assets.Dotnet,
+		name: '.Net',
+		category: 'web'
+	}),
+	defineSkill({
+		slug: 'django',
+		color: 'green',
+		description: 'A high-level Python web framework for building secure and scalable applications.',
+		logo: Assets.Django,
+		name: 'Django',
 		category: 'web'
 	}),
 	defineSkill({
@@ -140,6 +147,15 @@ export const items = [
 		name: 'HTML',
 		category: 'web'
 	}), 
+	defineSkill({
+		slug: 'css',
+		color: 'blue',
+		description:
+			'A stylesheet language for designing and styling web pages.',
+		logo: Assets.CSS,
+		name: 'CSS',
+		category: 'web'
+	}),
 	defineSkill({
 		slug: 'azure',
 		color: 'blue',
@@ -181,14 +197,6 @@ export const items = [
 		category: 'visualisation'
 	}),
 	defineSkill({
-		slug: 'dotnet',
-		color: 'purple',
-		description: 'A framework for building cross-platform applications, web APIs, and cloud-based services.',
-		logo: Assets.Dotnet,
-		name: '.Net',
-		category: 'web'
-	}),
-	defineSkill({
 		slug: 'git',
 		color: 'orange',
 		description: 'A version control system for tracking code changes and collaboration.',
@@ -211,14 +219,6 @@ export const items = [
 		logo: Assets.AWS,
 		name: 'AWS',
 		category: 'tech'
-	}),
-	defineSkill({
-		slug: 'django',
-		color: 'green',
-		description: 'A high-level Python web framework for building secure and scalable applications.',
-		logo: Assets.Django,
-		name: 'Django',
-		category: 'web'
 	}),
 	defineSkill({
 		slug: 'docker',
