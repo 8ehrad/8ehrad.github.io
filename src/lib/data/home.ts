@@ -41,4 +41,4 @@ export const links: Array<{ platform: Platform; link: string }> = [
 	// }
 ];
 
-export const skills = getSkills('Python', 'R', 'SQL', 'Numpy', 'Pandas', 'Tensorflow', 'Scikitlearn', 'Powerbi');
+export const skills = getSkills('python', 'r', 'sql', 'numpy', 'pandas', 'tensorflow', 'scikitlearn', 'powerbi');
