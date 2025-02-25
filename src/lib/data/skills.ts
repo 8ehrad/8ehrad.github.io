@@ -99,19 +99,19 @@ export const items = [
 		category: 'ml'
 	}),
 	defineSkill({
-		slug: 'tensorflow',
-		color: 'orange',
-		description: 'An open-source framework for machine learning and deep learning applications.',
-		logo: Assets.Tensorflow,
-		name: 'TensorFlow',
-		category: 'ml'
-	}),
-	defineSkill({
 		slug: 'scikitlearn',
 		color: 'blue',
 		description: 'A Python library offering simple, efficient tools for machine learning and statistical modelling.',
 		logo: Assets.Scikitlearn,
 		name: 'Scikit-learn',
+		category: 'ml'
+	}),
+	defineSkill({
+		slug: 'tensorflow',
+		color: 'orange',
+		description: 'An open-source framework for machine learning and deep learning applications.',
+		logo: Assets.Tensorflow,
+		name: 'TensorFlow',
 		category: 'ml'
 	}),
 	defineSkill({
@@ -157,6 +157,14 @@ export const items = [
 		category: 'web'
 	}),
 	defineSkill({
+		slug: 'git',
+		color: 'orange',
+		description: 'A version control system for tracking code changes and collaboration.',
+		logo: Assets.Git,
+		name: 'Git',
+		category: 'tech'
+	}),
+	defineSkill({
 		slug: 'azure',
 		color: 'blue',
 		description: "Microsoft's cloud computing platform for scalable applications, AI, and data analytics.",
@@ -197,11 +205,11 @@ export const items = [
 		category: 'visualisation'
 	}),
 	defineSkill({
-		slug: 'git',
+		slug: 'aws',
 		color: 'orange',
-		description: 'A version control system for tracking code changes and collaboration.',
-		logo: Assets.Git,
-		name: 'Git',
+		description: "Amazon's cloud platform offering scalable computing, storage, and AI services.",
+		logo: Assets.AWS,
+		name: 'AWS',
 		category: 'tech'
 	}),
 	defineSkill({
@@ -210,14 +218,6 @@ export const items = [
 		description: 'A framework for distributed storage and big data processing.',
 		logo: Assets.Hadoop,
 		name: 'Hadoop',
-		category: 'tech'
-	}),
-	defineSkill({
-		slug: 'aws',
-		color: 'orange',
-		description: "Amazon's cloud platform offering scalable computing, storage, and AI services.",
-		logo: Assets.AWS,
-		name: 'AWS',
 		category: 'tech'
 	}),
 	defineSkill({
