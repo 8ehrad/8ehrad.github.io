@@ -47,14 +47,6 @@ export const items = [
 		category: 'pro-lang'
 	}),
 	defineSkill({
-		slug: 'cpp',
-		color: 'blue',
-		description: '',
-		logo: Assets.Cpp,
-		name: 'C++',
-		category: 'pro-lang'
-	}),
-	defineSkill({
 		slug: 'r',
 		color: 'green',
 		description:
@@ -70,6 +62,22 @@ export const items = [
 			'',
 		logo: Assets.SQL,
 		name: 'SQL',
+		category: 'pro-lang'
+	}),
+	defineSkill({
+		slug: 'cpp',
+		color: 'blue',
+		description: '',
+		logo: Assets.Cpp,
+		name: 'C++',
+		category: 'pro-lang'
+	}),
+	defineSkill({
+		slug: 'csharp',
+		color: 'purple',
+		description: '',
+		logo: Assets.Csharp,
+		name: 'C#',
 		category: 'pro-lang'
 	}),
 	defineSkill({
