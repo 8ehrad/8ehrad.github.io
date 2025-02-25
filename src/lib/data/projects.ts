@@ -7,9 +7,9 @@ export const items: Array<Project> = [
 		slug: 'big-data-pipeline',
 		color: '#5e95e3',
 		description: `
-		- Built a Big Data pipeline to analyse Google data centre operations.
-		- Deployed a distributed computing environment with Hadoop for large-scale data processing.
-		`,
+- Built a Big Data pipeline to analyse Google data centre operations.
+- Deployed a distributed computing environment with Hadoop for large-scale data processing.
+    `,
 		shortDescription:
 			'I developed a Big Data pipeline to analyze Google data center operations, leveraging distributed computing to process large-scale datasets efficiently.',
 		// links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
