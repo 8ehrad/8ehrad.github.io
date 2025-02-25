@@ -157,22 +157,6 @@ export const items = [
 		category: 'web'
 	}),
 	defineSkill({
-		slug: 'git',
-		color: 'orange',
-		description: 'A version control system for tracking code changes and collaboration.',
-		logo: Assets.Git,
-		name: 'Git',
-		category: 'tech'
-	}),
-	defineSkill({
-		slug: 'azure',
-		color: 'blue',
-		description: "Microsoft's cloud computing platform for scalable applications, AI, and data analytics.",
-		logo: Assets.Azure,
-		name: 'Azure',
-		category: 'tech'
-	}),
-	defineSkill({
 		slug: 'keras',
 		color: 'red',
 		description: 'A high-level neural networks API for building deep learning models with TensorFlow.',
@@ -205,11 +189,27 @@ export const items = [
 		category: 'visualisation'
 	}),
 	defineSkill({
+		slug: 'git',
+		color: 'orange',
+		description: 'A version control system for tracking code changes and collaboration.',
+		logo: Assets.Git,
+		name: 'Git',
+		category: 'tech'
+	}),
+	defineSkill({
 		slug: 'aws',
 		color: 'orange',
 		description: "Amazon's cloud platform offering scalable computing, storage, and AI services.",
 		logo: Assets.AWS,
 		name: 'AWS',
+		category: 'tech'
+	}),
+	defineSkill({
+		slug: 'azure',
+		color: 'blue',
+		description: "Microsoft's cloud computing platform for scalable applications, AI, and data analytics.",
+		logo: Assets.Azure,
+		name: 'Azure',
 		category: 'tech'
 	}),
 	defineSkill({
