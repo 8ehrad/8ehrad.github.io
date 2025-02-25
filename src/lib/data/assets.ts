@@ -21,7 +21,7 @@ const Assets = {
 	Neo4j: a('neo4j.svg'),
 	Nginx: a('nginx.svg'),
 	Numpy: a('numpy.svg'),
-	Pandas: a('pandas.svg'),
+	Pandas: a('pandas.png'),
 	RabbitMQ: a('rabbitmq.svg'),
 	Rust: a('rust.svg', 'rust-dark.png'),
 	Scrapy: a('scrapy.png'),
