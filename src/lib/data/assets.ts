@@ -85,7 +85,8 @@ const Assets = {
 	Seaborn: a('seaborn.svg'),
 	Dotnet: a('dotnet.svg'),
 	Git: a('git.png'),
-	Hadoop: a('hadoop.svg')
+	Hadoop: a('hadoop.svg'), 
+	Lancaster: a('lancaster.svg')
 };
 
 export default Assets;
