@@ -73,7 +73,11 @@ const Assets = {
 	Postcss: a('postcss.svg'),
 	Informed: a('informed.png'), 
 	SUT: a('sut.png'), 
-	R: a('r.png')
+	R: a('r.png'),
+	SQL: a('sql.svg'),
+	Scikitlearn: a('scikitlearn.svg'),
+	Tensorflow: a('tensorflow.svg'),
+	Powerbi: a('powerbi.svg'),
 };
 
 export default Assets;
