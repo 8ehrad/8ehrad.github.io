@@ -13,55 +13,47 @@ export const items: Array<Project> = [
 		shortDescription:
 			'I developed a Big Data pipeline to analyze Google data center operations, leveraging distributed computing to process large-scale datasets efficiently.',
 		// links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
-		logo: Assets.Unknown,
-		name: 'Slick Portfolio',
+		logo: Assets.Lancaster,
+		name: 'Big Data Pipeline',
 		period: {
 			from: new Date()
 		},
-		skills: getSkills('angular', 'ts', 'tailwind'),
-		type: 'Website Template'
+		skills: getSkills('hadoop'),
+		type: 'Data Engineering'
 	},
 	{
-		slug: 'slick-portfolio-svelte',
+		slug: 'Face2Sketch',
 		color: '#ff3e00',
-		description:
-			'A Vercel-like developer portfolio website template made with Typescript and SvelteKit.',
+		description: `
+- Used CAEs and GANs for facial recognition and image translation.
+- Generated facial sketches from photos and reconstructed photos from sketches.`,
 		shortDescription:
-			'A Vercel-like developer portfolio website template made with Typescript and SvelteKit.',
+			'I worked with deep learning techniques for facial recognition and image translation, using generative models to convert photos into sketches and reconstruct images from sketches.',
 		// links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
-		logo: Assets.Svelte,
-		name: 'Slick Portfolio',
+		logo: Assets.Lancaster,
+		name: 'Face2Sketch and Sketch2Face',
 		period: {
 			from: new Date()
 		},
-		skills: getSkills('svelte', 'ts', 'tailwind', 'sass'),
-		type: 'Website Template',
-		screenshots: [
-			{
-				label: 'screen 1',
-				src: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'
-			},
-			{
-				label: '2',
-				src: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'
-			},
-			{
-				label: '3',
-				src: 'https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2dyYW1taW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
-			},
-			{
-				label: '4',
-				src: 'https://images.unsplash.com/photo-1542903660-eedba2cda473?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2dyYW1taW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
-			},
-			{
-				label: '5',
-				src: 'https://images.unsplash.com/photo-1619410283995-43d9134e7656?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHByb2dyYW1taW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
-			},
-			{
-				label: '6',
-				src: 'https://images.unsplash.com/photo-1585079542156-2755d9c8a094?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHByb2dyYW1taW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
-			}
-		]
+		skills: getSkills('python', 'tensorflow', 'keras'),
+		type: 'Deep Learning',
+		screenshots: []
+	},
+	{
+		slug: 'coop',
+		color: '#ff3e00',
+		description: `Applied time-series forecasting to optimise baked goods production, minimising waste and clearance items.`,
+		shortDescription:
+			'I used time-series forecasting to optimise baked goods production, improving efficiency and reducing waste.',
+		// links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
+		logo: Assets.Lancaster,
+		name: 'Co‑Op Bakery Forecasting',
+		period: {
+			from: new Date()
+		},
+		skills: getSkills('r'),
+		type: 'Forecasting',
+		screenshots: []
 	}
 ];
 
