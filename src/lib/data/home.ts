@@ -8,7 +8,10 @@ export const name = 'Behrad';
 export const lastName = 'Zabihi';
 
 export const description =
-	'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti, rerum. Debitis accusantium deleniti enim iste dignissimos? Similique, exercitationem! Odit vero, numquam quae ratione maxime sunt reiciendis laudantium quaerat iure ipsum!';
+	'A data scientist with a strong foundation in machine learning, NLP, and statistics. \
+	With experience in building scalable ETL pipelines, automating document processing, and deploying AI-driven solutions, I specialise in transforming complex data into actionable insights. \
+	My expertise spans cloud technologies, deep learning frameworks, and data visualisation, enabling businesses to optimise decision-making. \
+	Passionate about solving real-world problems, I thrive in collaborative environments where innovation meets impact.';
 
 export const links: Array<{ platform: Platform; link: string }> = [
 	{ platform: Platform.GitHub, link: 'https://github.com/8ehrad' },
@@ -38,4 +41,4 @@ export const links: Array<{ platform: Platform; link: string }> = [
 	// }
 ];
 
-export const skills = getSkills('js', 'css', 'html', 'reactjs', 'sass', 'svelte', 'ts');
+export const skills = getSkills('python', 'r', 'sql', 'numpy', 'pandas', 'tensorflow', 'scikitlearn', 'powerbi');
