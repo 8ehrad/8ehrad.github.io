@@ -77,7 +77,7 @@ const Assets = {
 	SQL: a('sql.svg'),
 	Scikitlearn: a('scikitlearn.svg'),
 	Tensorflow: a('tensorflow.svg'),
-	Powerbi: a('powerbi.svg'),
+	Powerbi: a('powerbi.png'),
 };
 
 export default Assets;
