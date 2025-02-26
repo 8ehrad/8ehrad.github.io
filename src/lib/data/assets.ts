@@ -86,7 +86,11 @@ const Assets = {
 	Dotnet: a('dotnet.svg'),
 	Git: a('git.png'),
 	Hadoop: a('hadoop.svg'), 
-	Lancaster: a('lancaster.svg')
+	Lancaster: a('lancaster.svg'),
+	Grafana: a('grafana.png'), 
+	Nifi: a('nifi.png'),
+	Airbyte: a('airbyte.svg'),
+	DBT: a('dbt.svg')
 };
 
 export default Assets;

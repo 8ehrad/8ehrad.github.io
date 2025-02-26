@@ -9,6 +9,7 @@ const categories = [
 	defineSkillCategory({ name: 'Programming Languages', slug: 'pro-lang' }),
 	defineSkillCategory({ name: 'Machine Learning', slug: 'ml' }),
 	defineSkillCategory({ name: 'Visualisation', slug: 'visualisation' }),
+	defineSkillCategory({ name: 'Data Engineering', slug: 'data-eng' }),
 	defineSkillCategory({ name: 'Web', slug: 'web' }),
 	defineSkillCategory({ name: 'Technologies/Frameworks', slug: 'tech' }),
 	defineSkillCategory({ name: 'Libraries', slug: 'library' }),
@@ -123,6 +124,55 @@ export const items = [
 		category: 'visualisation'
 	}),
 	defineSkill({
+		slug: 'matplotlib',
+		color: 'blue',
+		description: 'A Python library for creating static, animated, and interactive visualisations',
+		logo: Assets.Matplotlib,
+		name: 'Matplotlib',
+		category: 'visualisation'
+	}),
+	defineSkill({
+		slug: 'seaborn',
+		color: 'blue',
+		description: 'A Python library for statistical data visualisation based on Matplotlib.',
+		logo: Assets.Seaborn,
+		name: 'Seaborn',
+		category: 'visualisation'
+	}),
+	defineSkill({
+		slug: 'grafana',
+		color: 'yellow',
+		description: 'An open-source analytics and visualisation platform for monitoring and observability. \
+		Used for creating interactive dashboards with real-time metrics from various data sources.',
+		logo: Assets.Grafana,
+		name: 'Grafana',
+		category: 'visualisation'
+	}),
+	defineSkill({
+		slug: 'airbyte',
+		color: 'purple',
+		description: 'An open-source ELT (Extract, Load, Transform) tool designed for seamless data integration, supporting hundreds of connectors to automate data movement between sources and destinations.',
+		logo: Assets.Airbyte,
+		name: 'Airbyte',
+		category: 'data-eng'
+	}),
+	defineSkill({
+		slug: 'nifi',
+		color: 'grey',
+		description: 'A powerful data integration tool that automates the flow of data between systems, offering real-time processing, routing, and transformation with a user-friendly visual interface.',
+		logo: Assets.Nifi,
+		name: 'NiFi',
+		category: 'data-eng'
+	}),
+	defineSkill({
+		slug: 'dbt',
+		color: 'orange',
+		description: 'A transformation tool that enables analysts and engineers to write modular SQL code, manage data workflows, and build analytics models in a scalable, version-controlled manner.',
+		logo: Assets.DBT,
+		name: 'DBT',
+		category: 'data-eng'
+	}),
+	defineSkill({
 		slug: 'dotnet',
 		color: 'purple',
 		description: 'A framework for building cross-platform applications, web APIs, and cloud-based services.',
@@ -171,22 +221,6 @@ export const items = [
 		logo: Assets.Huggingface,
 		name: 'HuggingFace',
 		category: 'ml'
-	}),
-	defineSkill({
-		slug: 'matplotlib',
-		color: 'blue',
-		description: 'A Python library for creating static, animated, and interactive visualisations',
-		logo: Assets.Matplotlib,
-		name: 'Matplotlib',
-		category: 'visualisation'
-	}),
-	defineSkill({
-		slug: 'seaborn',
-		color: 'blue',
-		description: 'A Python library for statistical data visualisation based on Matplotlib.',
-		logo: Assets.Seaborn,
-		name: 'Seaborn',
-		category: 'visualisation'
 	}),
 	defineSkill({
 		slug: 'git',

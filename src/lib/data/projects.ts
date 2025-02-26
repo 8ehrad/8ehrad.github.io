@@ -26,11 +26,33 @@ export const items: Array<Project> = [
 		type: 'AI Research'
 	},
 	{
+		slug: 'movie-sentiment-analysis',
+		color: '#5e95e3',
+		description: `
+- Designed and executed a scalable, end-to-end ETL data engineering pipeline to collect movies information from the IMDB website, perform sentiment analysis on movie
+        reviews, and visualise the results.
+- Demonstrated high adaptability and quick learning capabilities, mastering new concepts efficiently within a tight timeframe.
+    `,
+		shortDescription:
+			"I designed and implemented a scalable end-to-end ETL pipeline to extract movie information from IMDB, perform sentiment analysis on reviews, and visualise the results. \
+			Showcased adaptability and fast learning by mastering new concepts within tight timeframe.",
+		// links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
+		logo: Assets.Lancaster,
+		name: 'Scalable ETL Pipeline for Movie Data and Sentiment Analysis',
+		period: {
+			from: new Date(2023, 2, 1), 
+			to: new Date(2023, 3, 1)
+		},
+		skills: getSkills('python', 'nifi', 'grafana'),
+		type: 'Data Engineering'
+	},
+	{
 		slug: 'big-data-pipeline',
 		color: '#5e95e3',
 		description: `
-- Built a Big Data pipeline to analyse Google data centre operations.
-- Deployed a distributed computing environment with Hadoop for large-scale data processing.
+- Designed and implemented a successful Big Data pipeline to understand the operational behaviour of one of Google's data centre clusters.
+- Established a distributed computing environment by connecting multiple machines together, utilising the Hadoop framework for data node distribution, and executing queries on the resultant big data using Hive.
+- Exhibited strong communication and leadership abilities, effectively driving team collaboration towards the successful completion of group project.
     `,
 		shortDescription:
 			'I developed a Big Data pipeline to analyze Google data center operations, leveraging distributed computing to process large-scale datasets efficiently.',
@@ -38,10 +60,31 @@ export const items: Array<Project> = [
 		logo: Assets.Lancaster,
 		name: 'Big Data Pipeline',
 		period: {
-			from: new Date()
+			from: new Date(2023, 1, 1), 
+			to: new Date(2023, 2, 30)
 		},
 		skills: getSkills('hadoop'),
-		type: 'Data Engineering'
+		type: 'Big Data'
+	},
+	{
+		slug: 'decision-tree',
+		color: '#5e95e3',
+		description: `
+- Implemented a Decision Tree classifier from scratch in Python (OOP), comparing performance metrics and computational aspects against a Sklearn library implementation, demonstrating good Python coding practices.
+- Utilised unit tests for comprehensive code verification, and conducting in-depth statistical analysis in R, using techniques like linear regression, t-tests, and ggplot2 for data visualisation.
+    `,
+		shortDescription:
+			'I Implemented a Decision Tree classifier from scratch in Python (OOP) and compared its performance and computational efficiency with Scikit-Learn’s implementation. \
+			Followed best coding practices, utilised unit tests for validation, and conducted statistical analysis in R using linear regression, t-tests, and ggplot2 for visualisation.',
+		// links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
+		logo: Assets.Lancaster,
+		name: 'Building and Evaluating a Decision Tree Classifier',
+		period: {
+			from: new Date(2022, 11, 1), 
+			to: new Date(2023, 0, 15)
+		},
+		skills: getSkills('python', 'r'),
+		type: 'Machine Learning and Statistical Analysis'
 	},
 	{
 		slug: 'Face2Sketch',
