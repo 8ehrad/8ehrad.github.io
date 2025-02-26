@@ -4,6 +4,28 @@ import type { Project } from '../types';
 
 export const items: Array<Project> = [
 	{
+		slug: 'lstm-research',
+		color: '#5e95e3',
+		description: `
+- Investigated LSTM vulnerability to spurious correlations, revealing significant performance drops with manipulated REAL/FAKE news dataset.
+- Applied Grad-CAM to uncover model's tendency to learn false features, emphasising the need for robustness against spurious correlations in real-world applications.
+- Demonstrated critical thinking and a strong capability to conduct in-depth analytical research.
+    `,
+		shortDescription:
+			"I Explored how LSTMs are susceptible to spurious correlations in a REAL/FAKE news dataset, revealing significant performance drops when manipulated. \
+			Applied Grad-CAM to visualise the model's reliance on false features, highlighting the importance of robustness in real-world applications. \
+			Demonstrated strong analytical research and critical thinking in evaluating model reliability.",
+		// links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
+		logo: Assets.Lancaster,
+		name: 'Investigating LSTM Vulnerability to Spurious Correlations',
+		period: {
+			from: new Date(2023, 2, 1), 
+			to: new Date(2023, 4, 1)
+		},
+		skills: getSkills('python', 'tensorflow', 'scikitlearn'),
+		type: 'AI Research'
+	},
+	{
 		slug: 'big-data-pipeline',
 		color: '#5e95e3',
 		description: `
