@@ -74,8 +74,7 @@ export const items: Array<Project> = [
 - Utilised unit tests for comprehensive code verification, and conducting in-depth statistical analysis in R, using techniques like linear regression, t-tests, and ggplot2 for data visualisation.
     `,
 		shortDescription:
-			'I Implemented a Decision Tree classifier from scratch in Python (OOP) and compared its performance and computational efficiency with Scikit-Learn’s implementation. \
-			Followed best coding practices, utilised unit tests for validation, and conducted statistical analysis in R using linear regression, t-tests, and ggplot2 for visualisation.',
+			'I Built a Decision Tree classifier from scratch in Python (OOP) and compared it to Scikit-Learn’s version. Applied unit tests for validation and conducted statistical analysis in R using regression, t-tests, and ggplot2.',
 		// links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
 		logo: Assets.Lancaster,
 		name: 'Building and Evaluating a Decision Tree Classifier',
@@ -98,7 +97,8 @@ export const items: Array<Project> = [
 		logo: Assets.Lancaster,
 		name: 'Face2Sketch and Sketch2Face',
 		period: {
-			from: new Date()
+			from: new Date(2023, 0, 1), 
+			to: new Date(2023, 2, 1)
 		},
 		skills: getSkills('python', 'tensorflow', 'keras'),
 		type: 'Deep Learning',
@@ -114,7 +114,8 @@ export const items: Array<Project> = [
 		logo: Assets.Lancaster,
 		name: 'Co‑Op Bakery Forecasting',
 		period: {
-			from: new Date()
+			from: new Date(2022, 9, 1), 
+			to: new Date(2023, 0, 1)
 		},
 		skills: getSkills('r'),
 		type: 'Forecasting',
