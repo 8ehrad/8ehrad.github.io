@@ -20,7 +20,7 @@ export const items: Array<Experience> = [
 		location: 'Manchester',
 		period: { from: new Date(2023, 10, 21) },
 		skills: getSkills('python', 'sql', 'csharp', 'huggingface', 'powerbi', 'airbyte', 'dbt', 'dotnet', 'django', 'html', 'css', 'git', 'aws', 'azure', 'docker'),
-		name: 'Technical Consultant',
+		name: 'Data Scientist',
 		color: 'red',
 		links: [],
 		logo: Assets.Informed,
