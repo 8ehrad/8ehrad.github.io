@@ -4,7 +4,7 @@ import { ContractType, type Experience } from '../types';
 
 export const items: Array<Experience> = [
 	{
-		slug: 'technical-associate',
+		slug: 'data-scientist',
 		company: 'Informed Solutions',
 		description: `
 - Automated farmers’ funding validation pipeline leveraging NLP and computer vision to reduce manual review time by 2 weeks per case.
@@ -24,7 +24,7 @@ export const items: Array<Experience> = [
 		color: 'red',
 		links: [],
 		logo: Assets.Informed,
-		shortDescription: 'I have worked as a Technical Consultant across data science and software development, delivering solutions for various clients. \
+		shortDescription: 'I have worked as a Data Scientist across data science and software development, delivering solutions for various clients. \
 			My work mainly involves building data-driven solutions and developing cloud-based web applications.'
 	},
 	{
