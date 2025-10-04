@@ -7,12 +7,13 @@ export const items: Array<Experience> = [
 		slug: 'data-scientist',
 		company: 'Informed Solutions',
 		description: `
-- Automated farmers’ funding validation pipeline leveraging NLP and computer vision to reduce manual review time by 2 weeks per case.
+- Automated Scottish farmers’ funding validation with a multimodal ML pipeline deployed on AWS (Llama, LLaVA,Bedrock, Textract), cutting review time from 2 weeks to real-time and achieving an F1 score of 0.91.
+- Built a scalable ETL pipeline using Airbyte and DBT to extract and link EPC and postcode data for 65,000 households in the Isle of Wight, powering an interactive map for household-level EPC insights.
 - Built a Power BI dashboard for delivery managers and recruitment team to make real-time data-driven decisions.
 - Optimised database design and data modelling, integrating it into interactive dashboards to provide stakeholders with actionable insights for efficient project and resource allocation.
-- Developed a scalable ETL pipeline using Airbyte and DBT for the National Digital Twin Programme (NDTP) to extract EPC data, linking it to house postcodes for real-time visualisation and energy efficiency insights.
 - Developed cloud-based web applications and REST APIs following object-oriented programming principles.
 - Applied agile practices with Jira and Git to manage CI/CD pipelines for streamlined integration and testing.
+- Communicated complex AI/ML concepts to both technical and non-technical stakeholders.
 - Provided continuous client communication, consultancy, and support to build strong relationships. 
     `,
 		contract: ContractType.FullTime,
@@ -31,8 +32,9 @@ export const items: Array<Experience> = [
 		slug: 'data-science-placement',
 		company: 'Informed Solutions',
 		description: `
-- Automated planning applications by extracting key information from unstructured documents to reduce review time.
-- Utilised keyword extraction and LLM-based summarisation to create concise document summaries for assessors.
+- Developed an NLP pipeline for keyword extraction and summarisation of structured and unstructured data.
+- Improved topic extraction using BERTopic and LLM-based techniques.
+- Used GPT and LangChain to summarise urban planning cases, cutting manual review time by 60% and reaching a BERTScore F1 of 0.84.
     `,
 		contract: ContractType.Internship,
 		type: 'Data Science',
@@ -49,8 +51,8 @@ export const items: Array<Experience> = [
 		slug: 'data-scientist',
 		company: 'Mizan Gostaran Sharif',
 		description: `
-- Developed a scalable NLP pipeline, automating resume processing and increasing throughput from 26K to 500K+ CVs.
-- Clustered semi-structured and unstructured resume data to optimise candidate-job matching based on relevance.
+- Scaled resume parsing system from 26K to 500K+ CVs using a custom NLP pipeline for entity extraction.
+- Improved job recommendation by clustering CVs using UMAP + HDBSCAN for semantic similarity analysis.
     `,
 		contract: ContractType.FullTime,
 		type: 'Data Science',
@@ -68,8 +70,8 @@ export const items: Array<Experience> = [
 		slug: 'ml-research-assistant',
 		company: 'Sharif University of Technology',
 		description: `
-- Modelled the spread of COVID-19 using statistical techniques, analysing transmission dynamics between countries.
-- Enabled authorities to make informed decisions regarding travel bans from high-risk countries to limit the spread of the virus.
+- Modelled Covid-19 propagation network using time series and statistical modelling on 100k global cases.
+- Identified key influencers in the global propagation graph by inferring inter-country transmission rates.
     `,
 		contract: ContractType.PartTime,
 		type: 'Machine Learning',
