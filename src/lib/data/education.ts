@@ -3,11 +3,9 @@ import type { Education } from '../types';
 
 export const items: Array<Education> = [
 	{
-		degree: "Master's degree of Data Science",
-		description: 'Fast-paced wholesome course in Data Science, covering a variety of subjects in the realm of Data Science, \
-			including machine learning, deep learning, statistical modelling, data engineering, and big data. I finished with a high distinction, \
-			ranking 3rd in our cohort among 120 students.',
-		location: 'United Kingdom',
+		degree: 'MSc Data Science and Statistics',
+		description: 'Graduated with Distinction in the top 2.5% of the cohort, covering machine learning, deep learning, statistical modelling, NLP, computer vision and large-scale data engineering.',
+		location: 'Lancaster, UK',
 		logo: Assets.Lancaster,
 		name: '',
 		organization: 'Lancaster University',
@@ -17,12 +15,12 @@ export const items: Array<Education> = [
 		subjects: ['Python', 'R', 'Machine Learning', 'Deep Learning', 'Statistics', 'NLP', 'Computer Vision', 'Big Data']
 	},
 	{
-		degree: 'Bachelor degree of Computer Engineering',
-		description: '',
-		location: 'Iran',
+		degree: 'BSc Computer Engineering',
+		description: 'Gold Medalist in the Iranian National Olympiad in Informatics, with foundations in algorithms, data structures, probability, statistics and computer systems.',
+		location: 'Tehran, Iran',
 		logo: Assets.SUT,
 		name: '',
-		organization: 'Sharif University of',
+		organization: 'Sharif University of Technology',
 		period: { from: new Date(2016, 9, 23), to: new Date(2021, 7, 28) },
 		shortDescription: '',
 		slug: 'dummy-education-item-2',

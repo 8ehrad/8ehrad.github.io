@@ -4,7 +4,25 @@ import { ContractType, type Experience } from '../types';
 
 export const items: Array<Experience> = [
 	{
-		slug: 'data-scientist',
+		slug: 'bet365-data-scientist',
+		company: 'Bet365',
+		description: `
+- Engineered 700+ ML-ready player profiling features across gaming preferences and behavioural patterns for more than 1M UK players using SQL Server and Python.
+- Productionised an end-to-end GCP pipeline with daily BigQuery incremental recompute and Vertex AI Feature Store serving at 10ms latency for downstream ML models.
+		`,
+		contract: ContractType.FullTime,
+		type: 'Data Science / ML Engineering',
+		location: 'Manchester, UK',
+		period: { from: new Date(2026, 1, 1) },
+		skills: getSkills('python', 'sql'),
+		name: 'Data Scientist',
+		color: 'purple',
+		links: [],
+		logo: Assets.Unknown,
+		shortDescription: 'Building production player-profiling data products and low-latency ML feature infrastructure across on-premise and GCP environments.'
+	},
+	{
+		slug: 'informed-data-scientist',
 		company: 'Informed Solutions',
 		description: `
 - Automated Scottish farmers’ funding validation with a multimodal ML pipeline deployed on AWS (Llama, LLaVA,Bedrock, Textract), cutting review time from 2 weeks to real-time and achieving an F1 score of 0.91.
@@ -19,7 +37,7 @@ export const items: Array<Experience> = [
 		contract: ContractType.FullTime,
 		type: 'Data Science/Software Development',
 		location: 'Manchester',
-		period: { from: new Date(2023, 10, 21) },
+		period: { from: new Date(2023, 10, 21), to: new Date(2025, 10, 30) },
 		skills: getSkills('python', 'sql', 'csharp', 'huggingface', 'powerbi', 'airbyte', 'dbt', 'dotnet', 'django', 'html', 'css', 'git', 'aws', 'azure', 'docker'),
 		name: 'Data Scientist',
 		color: 'red',
@@ -29,7 +47,7 @@ export const items: Array<Experience> = [
 			My work mainly involves building data-driven solutions and developing cloud-based web applications.'
 	},
 	{
-		slug: 'data-science-placement',
+		slug: 'informed-data-science-placement',
 		company: 'Informed Solutions',
 		description: `
 - Developed an NLP pipeline for keyword extraction and summarisation of structured and unstructured data.
@@ -39,7 +57,7 @@ export const items: Array<Experience> = [
 		contract: ContractType.Internship,
 		type: 'Data Science',
 		location: 'Manchester',
-		period: { from: new Date(2022, 5, 5), to: new Date(2022, 8, 30)},
+		period: { from: new Date(2023, 5, 5), to: new Date(2023, 8, 30)},
 		skills: getSkills('python', 'huggingface'),
 		name: 'Data Science Placement',
 		color: 'blue',
@@ -48,7 +66,7 @@ export const items: Array<Experience> = [
 		shortDescription: 'During my data science placement, I Extracted key information from diverse and unstructured documents, utilising state-of-the-art NLP methods.'
 	},
 	{
-		slug: 'data-scientist',
+		slug: 'mizan-data-scientist',
 		company: 'Mizan Gostaran Sharif',
 		description: `
 - Scaled resume parsing system from 26K to 500K+ CVs using a custom NLP pipeline for entity extraction.
