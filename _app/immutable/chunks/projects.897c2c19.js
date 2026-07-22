@@ -1,4 +1,4 @@
-import{A as e}from"./assets.7793d6b2.js";import{g as i}from"./skills.b51dcd8b.js";const n=[{slug:"lstm-research",color:"#5e95e3",description:`
+import{A as e}from"./assets.dab7d8dd.js";import{g as i}from"./skills.e48bdae9.js";const n=[{slug:"lstm-research",color:"#5e95e3",description:`
 - Investigated LSTM vulnerability to spurious correlations, revealing significant performance drops with manipulated REAL/FAKE news dataset.
 - Applied Grad-CAM to uncover model's tendency to learn false features, emphasising the need for robustness against spurious correlations in real-world applications.
 - Demonstrated critical thinking and a strong capability to conduct in-depth analytical research.
