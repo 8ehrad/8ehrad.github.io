@@ -35,7 +35,7 @@ export const profile = {
 
 export const proofPoints = [
 	{ value: '3.5+ yrs', label: 'delivering professional data science and AI systems' },
-	{ value: 'Gold medal', label: 'National Olympiad in Informatics — one of only eight winners' },
+	{ value: 'Gold medal', label: 'National Olympiad in Informatics' },
 	{ value: 'Top 2.5%', label: 'MSc Data Science & Statistics at Lancaster University' },
 	{ value: 'AWS + GCP', label: 'production experience across both cloud platforms' }
 ];
