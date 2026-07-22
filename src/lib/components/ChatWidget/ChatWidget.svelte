@@ -11,10 +11,10 @@
 
 	const API_URL = import.meta.env.VITE_TWIN_API_URL || 'https://6a17qjsrw3.execute-api.eu-west-2.amazonaws.com';
 	const prompts = [
-		'Why would Behrad be a strong hire?',
+		'What kind of AI systems has Behrad built?',
 		'Tell me about his production AI work',
 		'Which project best shows his engineering skills?',
-		'How does his experience fit an AI Engineer role?'
+		'How does he take AI from prototype to production?'
 	];
 
 	let open = false;
@@ -118,8 +118,8 @@
 			{#if messages.length === 0}
 				<div class="chat-welcome">
 					<div class="welcome-glyph"><span></span><span></span><span></span></div>
-					<p class="eyebrow">ASK THE PERSON BEHIND THE CV</p>
-					<h2>Curious about the fit?</h2>
+					<p class="eyebrow">EXPLORE THE WORK BEHIND THE PORTFOLIO</p>
+					<h2>Curious about the details?</h2>
 					<p>I know Behrad’s experience, projects and working style. Ask something specific — I’ll keep it grounded.</p>
 					<div class="prompt-grid">
 						{#each prompts as prompt}
