@@ -173,9 +173,9 @@
 
 <section class="cta-section shell">
 	<div class="cta-orbit"></div>
-	<p class="section-label">THE INTERACTIVE CV</p>
-	<h2>There’s more behind the bullet points.</h2>
-	<p>Ask my digital twin about a project, a role, my working style, or whether my experience fits your team.</p>
+	<p class="section-label">THE INTERACTIVE PORTFOLIO</p>
+	<h2>There’s more behind the project summaries.</h2>
+	<p>Ask my digital twin about my projects, technical decisions, production experience or working style.</p>
 	<button class="button primary" on:click={openTwin}><span class="mini-twin">B<i></i></span> Start a conversation <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg></button>
 </section>
 
