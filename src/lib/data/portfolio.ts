@@ -169,24 +169,24 @@ export const projects: ProjectItem[] = [
 
 export const skillGroups = [
 	{
-		name: 'AI & Machine Learning',
-		description: 'From classical modelling to grounded, evaluated LLM systems.',
-		skills: ['Machine Learning', 'Deep Learning', 'NLP', 'RAG', 'LLM Engineering', 'QLoRA', 'Agentic AI', 'Multi-agent Systems', 'Time Series', 'Statistics']
+		name: 'Data Science & Machine Learning',
+		description: 'From messy data and statistical reasoning to measurable predictive systems.',
+		skills: ['Machine Learning', 'Statistics', 'Feature Engineering', 'Forecasting', 'Time Series', 'NLP', 'Clustering', 'Model Evaluation', 'Deep Learning']
+	},
+	{
+		name: 'AI Engineering',
+		description: 'Grounded, evaluated LLM applications and agentic systems.',
+		skills: ['LLM Engineering', 'RAG', 'QLoRA', 'Prompt Engineering', 'Agentic AI', 'Multi-agent Systems', 'MCP', 'Bedrock']
 	},
 	{
 		name: 'Data & Platforms',
 		description: 'Reliable pipelines, stores and low-latency data products.',
-		skills: ['Python', 'SQL', 'BigQuery', 'SQL Server', 'dbt', 'Airbyte', 'Apache NiFi', 'PostgreSQL', 'Power BI', 'Grafana']
+		skills: ['Python', 'SQL', 'BigQuery', 'SQL Server', 'dbt', 'Airbyte', 'Apache NiFi', 'PostgreSQL', 'Power BI']
 	},
 	{
 		name: 'Cloud & Production',
-		description: 'The engineering around AI: deployment, observability and scale.',
-		skills: ['AWS', 'GCP', 'Azure', 'Bedrock', 'Vertex AI', 'SageMaker', 'Lambda', 'S3', 'SQS', 'Docker', 'Terraform', 'CI/CD']
-	},
-	{
-		name: 'Product Engineering',
-		description: 'Full-stack systems that turn models into useful workflows.',
-		skills: ['FastAPI', 'Next.js', 'React', 'TypeScript', 'Django', 'REST APIs', 'Git', 'Testing', 'MCP', 'LangChain']
+		description: 'The engineering that makes data and AI systems reliable at scale.',
+		skills: ['AWS', 'GCP', 'Vertex AI', 'SageMaker', 'Lambda', 'Docker', 'Terraform', 'FastAPI', 'CI/CD', 'Testing']
 	}
 ];
 

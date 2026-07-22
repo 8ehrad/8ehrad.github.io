@@ -11,10 +11,10 @@
 
 	const API_URL = import.meta.env.VITE_TWIN_API_URL || 'https://6a17qjsrw3.execute-api.eu-west-2.amazonaws.com';
 	const prompts = [
-		'What kind of AI systems has Behrad built?',
-		'Tell me about his production AI work',
-		'Which project best shows his engineering skills?',
-		'How does he take AI from prototype to production?'
+		'What data science problems has Behrad worked on?',
+		'Tell me about his AI engineering work',
+		'Which project best demonstrates his technical range?',
+		'How does he turn messy data into useful systems?'
 	];
 
 	let open = false;
