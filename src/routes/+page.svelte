@@ -17,7 +17,7 @@
 	<div class="hero-copy">
 		<div class="status-pill"><i></i> Building data products and production AI</div>
 		<p class="kicker">DATA SCIENTIST <span>×</span> AI ENGINEER</p>
-		<h1>Turning complex data and ambitious AI into <em>working systems.</em></h1>
+		<h1>Turning complex data and AI into <em>working systems.</em></h1>
 		<p class="hero-summary">{profile.summary}</p>
 		<div class="hero-actions">
 			<a class="button primary" href="#work">
