@@ -14,7 +14,7 @@
 		'What data science problems has Behrad worked on?',
 		'Tell me about his AI engineering work',
 		'Which project best demonstrates his technical range?',
-		'How does he turn messy data into useful systems?'
+		'What achievement is Behrad most proud of?'
 	];
 
 	let open = false;
