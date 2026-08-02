@@ -4,5 +4,5 @@ export const items = [
 	{ title: 'Projects', to: '/projects', icon: 'i-carbon-cube' },
 	{ title: 'Education', to: '/education', icon: 'i-carbon-education' },
 	{ title: 'Resumé', to: '/resume', icon: 'i-carbon-result' },
-	{ title: 'Career OS', to: '/career', icon: 'i-carbon-portfolio' }
+	{ title: 'Private', to: '/career', icon: 'i-carbon-portfolio' }
 ] as const;

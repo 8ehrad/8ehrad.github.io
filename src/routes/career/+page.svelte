@@ -109,18 +109,18 @@
 </script>
 
 <svelte:head>
-	<title>Career OS — Behrad Zabihi</title>
-	<meta name="description" content="Private job recommendations, evidence, and application tracking." />
+	<title>Private — Behrad Zabihi</title>
+	<meta name="description" content="A private section of Behrad Zabihi's website." />
 </svelte:head>
 
 {#if !authenticated && !loading}
 	<section class="career-auth shell">
 		<div class="auth-mark">BZ<span></span></div>
-		<p>PRIVATE CAREER WORKSPACE</p>
-		<h1>Your next role,<br /><em>judged carefully.</em></h1>
-		<span>Job recommendations, salary evidence and application materials are private to your account.</span>
+		<p>BEHRAD'S PRIVATE CORNER</p>
+		<h1>Not Behrad?<br /><em>This bit isn't for you ;)</em></h1>
+		<span>Nothing personal — the rest of the site is all yours.</span>
 		{#if error}<div class="auth-error" role="alert">{error}</div>{/if}
-		<button on:click={login}>Sign in to Career OS</button>
+		<button on:click={login}>I'm Behrad — sign in</button>
 	</section>
 {:else}
 	<section class="career-shell">

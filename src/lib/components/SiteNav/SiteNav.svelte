@@ -16,7 +16,7 @@
 		{ label: 'Experience', href: '/#experience' },
 		{ label: 'Skills', href: '/#skills' },
 		{ label: 'About', href: '/#about' },
-		{ label: 'Career OS', href: '/career' }
+		{ label: 'Private', href: '/career' }
 	];
 </script>
 
