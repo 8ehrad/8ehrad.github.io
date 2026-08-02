@@ -15,7 +15,8 @@
 		{ label: 'Work', href: '/#work' },
 		{ label: 'Experience', href: '/#experience' },
 		{ label: 'Skills', href: '/#skills' },
-		{ label: 'About', href: '/#about' }
+		{ label: 'About', href: '/#about' },
+		{ label: 'Career OS', href: '/career' }
 	];
 </script>
 
@@ -66,4 +67,3 @@
 		.nav-resume { width: auto !important; margin: 14px 0 0; padding: 11px 14px !important; border: 1px solid rgba(255,255,255,.14) !important; }
 	}
 </style>
-

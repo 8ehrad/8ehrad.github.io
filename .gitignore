@@ -9,3 +9,12 @@ node_modules
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 /.vscode
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+career-agent/build/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
