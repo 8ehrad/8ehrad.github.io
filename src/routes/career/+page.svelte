@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { completeLogin, isAuthConfigured, login, logout, token } from '$lib/career/auth';
-	import { isDemoMode, listJobs, prepareApplication, updateJob } from '$lib/career/api';
+	import { getApplicationPack, isDemoMode, listJobs, prepareApplication, updateJob } from '$lib/career/api';
 	import type { ApplicationPack, Job, JobStatus } from '$lib/career/types';
 
 	type View = 'recommended' | 'shortlisted' | 'applications' | 'archived';
@@ -16,6 +16,7 @@
 	let view: View = 'recommended';
 	let loading = true;
 	let working = '';
+	let packLoadingJobId = '';
 	let error = '';
 	let pack: ApplicationPack | null = null;
 	let authenticated = isDemoMode() || Boolean(token());
@@ -43,6 +44,7 @@
 			if (authenticated) {
 				jobs = await listJobs();
 				selected = (requested && jobs.find((job) => job.id === requested)) || jobs[0] || null;
+				if (selected) await loadExistingPack(selected);
 			}
 		} catch (cause) {
 			error = cause instanceof Error ? cause.message : 'The dashboard could not be loaded.';
@@ -99,12 +101,30 @@
 		if (selected) void prepare(selected);
 	}
 
-	function choose(job: Job) {
+	async function loadExistingPack(job: Job) {
+		pack = null;
+		if (job.status !== 'ready_to_apply') return;
+		packLoadingJobId = job.id;
+		try {
+			const loadedPack = await getApplicationPack(job);
+			if (selected?.id === job.id) pack = loadedPack;
+		} catch (cause) {
+			if (selected?.id === job.id) {
+				error = cause instanceof Error ? cause.message : 'Application materials could not be loaded.';
+			}
+		} finally {
+			if (packLoadingJobId === job.id) packLoadingJobId = '';
+		}
+	}
+
+	async function choose(job: Job) {
 		selected = job;
 		pack = null;
+		error = '';
 		const url = new URL(window.location.href);
 		url.searchParams.set('job', job.id);
 		window.history.replaceState({}, '', url);
+		await loadExistingPack(job);
 	}
 </script>
 
@@ -161,7 +181,7 @@
 						<div class="empty"><strong>Nothing here yet.</strong><span>Move a recommendation into this stage to track it.</span></div>
 					{/if}
 					{#each visibleJobs as job, index}
-						<button class:selected={selected?.id === job.id} class="job-row" on:click={() => choose(job)}>
+						<button class:selected={selected?.id === job.id} class="job-row" on:click={() => void choose(job)}>
 							<div class="job-rank">{String(index + 1).padStart(2, '0')}</div>
 							<div class="job-core">
 								<div class="job-topline"><span>{job.company}</span><small>{job.workplace}</small></div>
@@ -200,6 +220,12 @@
 							{/if}
 						</div>
 
+						{#if packLoadingJobId === selected.id}
+							<section class="pack-panel pack-loading" aria-live="polite"><i></i><span>Loading your tailored CV and cover letter…</span></section>
+						{:else if pack && pack.job_id === selected.id}
+							<section class="pack-panel"><p>APPLICATION PACK READY</p><h3>{pack.cv_headline}</h3><span>{pack.cv_summary}</span><div>{#each Object.entries(pack.download_urls) as file}<a href={file[1]}>{file[0].replace('_', ' ')} ↗</a>{/each}</div><small>Review every document before submitting.</small></section>
+						{/if}
+
 						<section class="salary-panel">
 							<div><span>COMPENSATION</span><strong>{salary(selected)}</strong><p>{salaryBasis(selected)}</p></div>
 							<div><span>WORKING PATTERN</span><strong>{selected.workplace}</strong><p>{selected.location}</p></div>
@@ -217,10 +243,6 @@
 						<section class="detail-section"><p>ROLE REQUIREMENTS</p><ul>{#each selected.requirements as requirement}<li>{requirement}</li>{/each}</ul></section>
 						<section class="detail-section"><p>COMPANY & ROLE CONTEXT</p><div class="context-grid">{#each Object.entries(selected.company_context) as context}<div><span>{context[0].replace('_', ' ')}</span><strong>{String(context[1])}</strong></div>{/each}</div></section>
 						<section class="detail-section"><p>FULL ADVERT</p><div class="description">{selected.description}</div><a class="source-link" href={selected.source_url} target="_blank" rel="noreferrer">View original source ↗</a></section>
-
-						{#if pack && pack.job_id === selected.id}
-							<section class="pack-panel"><p>APPLICATION PACK READY</p><h3>{pack.cv_headline}</h3><span>{pack.cv_summary}</span><div>{#each Object.entries(pack.download_urls) as file}<a href={file[1]}>{file[0].replace('_', ' ')} ↗</a>{/each}</div><small>Review every document before submitting.</small></section>
-						{/if}
 					</aside>
 				{:else}<aside class="job-detail empty-detail">Select a role to inspect its evidence.</aside>{/if}
 			</div>
@@ -259,7 +281,8 @@
 	.score-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; margin-top: 8px; }.score-grid > div { padding: 13px; border: 1px solid var(--line); border-radius: 9px; background: #11151b; }.score-grid strong { float: right; color: white; font-size: 13px; }.score-grid i { display: block; width: 100%; height: 2px; margin-top: 12px; background: #292e37; }.score-grid b { display: block; height: 2px; background: var(--violet); }
 	.detail-section { margin-top: 27px; padding-top: 24px; border-top: 1px solid var(--line); }.reason, .gap { display: grid; grid-template-columns: 22px 1fr; gap: 8px; margin-top: 9px; color: #aeb3bd; font-size: 11px; line-height: 1.5; }.reason i, .gap i { display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: rgba(216,255,92,.09); color: var(--lime); font-size: 8px; font-style: normal; }.gap i { background: rgba(255,181,92,.1); color: #ffb55c; }.evidence-list { display: flex; flex-wrap: wrap; gap: 6px; }.evidence-list span { color: #bfb3ff; border-color: rgba(124,92,255,.28); background: rgba(124,92,255,.05); }
 	.detail-section ul { margin: 0; padding-left: 17px; color: #a6abb5; font-size: 11px; line-height: 1.6; }.detail-section li + li { margin-top: 6px; }.context-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 7px; }.context-grid > div { padding: 12px; border: 1px solid var(--line); border-radius: 8px; }.context-grid span { display: block; text-transform: uppercase; }.context-grid strong { display: block; margin-top: 7px; color: #afb4bd; font-size: 10px; line-height: 1.4; }.description { max-height: 220px; overflow-y: auto; padding-right: 8px; color: #969ca8; font-size: 11px; line-height: 1.7; }.source-link { display: inline-block; margin-top: 13px; color: var(--lime); font-size: 9px; text-decoration: none; }
-	.pack-panel { margin-top: 28px; padding: 20px; border: 1px solid rgba(216,255,92,.26); border-radius: 11px; background: rgba(216,255,92,.035); }.pack-panel h3 { margin: 0; font-size: 17px; }.pack-panel > span { display: block; margin-top: 8px; color: #919795; font-size: 10px; line-height: 1.5; }.pack-panel div { display: flex; gap: 8px; margin-top: 15px; }.pack-panel a { padding: 8px 10px; border-radius: 6px; background: var(--lime); color: #090b0f; font-size: 8px; font-weight: 800; text-decoration: none; text-transform: capitalize; }.pack-panel small { display: block; margin-top: 12px; color: #71776d; font-size: 8px; }
+	.pack-panel { margin: 0 0 8px; padding: 20px; border: 1px solid rgba(216,255,92,.26); border-radius: 11px; background: rgba(216,255,92,.035); }.pack-panel h3 { margin: 0; font-size: 17px; }.pack-panel > span { display: block; margin-top: 8px; color: #919795; font-size: 10px; line-height: 1.5; }.pack-panel div { display: flex; gap: 8px; margin-top: 15px; }.pack-panel a { padding: 8px 10px; border-radius: 6px; background: var(--lime); color: #090b0f; font-size: 8px; font-weight: 800; text-decoration: none; text-transform: capitalize; }.pack-panel small { display: block; margin-top: 12px; color: #71776d; font-size: 8px; }
+	.pack-loading { display: flex; align-items: center; gap: 10px; }.pack-loading i { width: 16px; height: 16px; border: 2px solid #303640; border-top-color: var(--lime); border-radius: 50%; animation: spin 800ms linear infinite; }.pack-loading > span { margin: 0; }
 	.error-banner { margin-top: 18px; padding: 12px 15px; border: 1px solid rgba(255,96,96,.35); border-radius: 9px; background: rgba(255,96,96,.06); color: #ffb2b2; font-size: 10px; }.loading, .empty { display: flex; min-height: 220px; flex-direction: column; align-items: center; justify-content: center; color: #727985; }.loading i { width: 24px; height: 24px; margin-bottom: 12px; border: 2px solid #2a3039; border-top-color: var(--lime); border-radius: 50%; animation: spin 800ms linear infinite; }.loading span, .empty span { font-size: 9px; }.empty strong { margin-bottom: 7px; color: #b5bac3; }.empty-detail { display: grid; min-height: 400px; place-items: center; color: #707682; font-size: 11px; }
 	.career-auth { display: flex; min-height: 100vh; flex-direction: column; align-items: flex-start; justify-content: center; }.auth-mark { position: relative; display: grid; place-items: center; width: 52px; height: 52px; border: 1px solid #333945; border-radius: 14px; font-weight: 800; }.auth-mark span { position: absolute; right: 6px; bottom: 6px; width: 6px; height: 6px; border-radius: 50%; background: var(--lime); }.career-auth > p { margin: 30px 0 12px; color: var(--lime); font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; }.career-auth h1 { margin: 0; font-size: clamp(50px, 7vw, 86px); line-height: .98; letter-spacing: -.07em; }.career-auth h1 em { color: var(--lime); font-style: normal; }.career-auth > span { max-width: 520px; margin-top: 24px; color: #9298a3; font-size: 13px; line-height: 1.7; }.auth-error { max-width: 520px; margin-top: 18px; padding: 12px 15px; border: 1px solid rgba(255,96,96,.35); border-radius: 9px; background: rgba(255,96,96,.06); color: #ffb2b2; font-size: 10px; }.career-auth button { margin-top: 28px; }
 	@keyframes spin { to { transform: rotate(360deg); } }

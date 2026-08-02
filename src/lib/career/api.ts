@@ -47,3 +47,8 @@ export async function prepareApplication(job: Job): Promise<ApplicationPack> {
 	}
 	return request<ApplicationPack>(`/jobs/${job.id}/prepare`, { method: 'POST' });
 }
+
+export async function getApplicationPack(job: Job): Promise<ApplicationPack> {
+	if (isDemoMode()) return prepareApplication(job);
+	return request<ApplicationPack>(`/jobs/${job.id}/application-pack`);
+}
