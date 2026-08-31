@@ -47,6 +47,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"aws-rum-web": "3.2.1",
 		"dayjs": "^1.11.10"
 	}
 }

@@ -20,6 +20,8 @@ jobs:
           VITE_COGNITO_DOMAIN: https://behrad-career-agent-prod-635863384208.auth.eu-west-2.amazoncognito.com
           VITE_COGNITO_CLIENT_ID: 5hgk0avac11s3juuiatgn6gm8d
           VITE_COGNITO_REDIRECT_URI: https://behradzabihi.app/career
+          VITE_RUM_APP_MONITOR_ID: def24883-db89-460c-bb7f-36e4fd394c55
+          VITE_RUM_REGION: eu-west-2
         run: |
           yarn install --immutable --immutable-cache --check-cache
           yarn build

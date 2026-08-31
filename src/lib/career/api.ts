@@ -8,11 +8,15 @@ export function isDemoMode(): boolean {
 	return !apiUrl;
 }
 
-async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
+export async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
 	const idToken = token();
 	const response = await fetch(`${apiUrl}${path}`, {
 		...options,
-		headers: { 'content-type': 'application/json', ...(idToken ? { authorization: `Bearer ${idToken}` } : {}), ...(options.headers || {}) }
+		headers: {
+			'content-type': 'application/json',
+			...(idToken ? { authorization: `Bearer ${idToken}` } : {}),
+			...(options.headers || {})
+		}
 	});
 	if (!response.ok) {
 		const error = await response.json().catch(() => ({ detail: response.statusText }));
@@ -22,13 +26,28 @@ async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
 }
 
 export async function listJobs(): Promise<Job[]> {
-	if (isDemoMode()) return demoJobs.map((job) => structuredClone(job)).sort((left, right) => right.score.overall - left.score.overall);
+	if (isDemoMode())
+		return demoJobs
+			.map((job) => structuredClone(job))
+			.sort((left, right) => right.score.overall - left.score.overall);
 	return (await request<{ items: Job[] }>('/jobs')).items;
 }
 
 export async function updateJob(job: Job, status: JobStatus, reason?: string): Promise<Job> {
-	if (isDemoMode()) return { ...job, status, dismissal_reason: reason || null, application_tracking: status === 'applied' ? { ...job.application_tracking, applied_at: new Date().toISOString() } : job.application_tracking };
-	return request<Job>(`/jobs/${job.id}`, { method: 'PATCH', body: JSON.stringify({ status, reason }) });
+	if (isDemoMode())
+		return {
+			...job,
+			status,
+			dismissal_reason: reason || null,
+			application_tracking:
+				status === 'applied'
+					? { ...job.application_tracking, applied_at: new Date().toISOString() }
+					: job.application_tracking
+		};
+	return request<Job>(`/jobs/${job.id}`, {
+		method: 'PATCH',
+		body: JSON.stringify({ status, reason })
+	});
 }
 
 export async function prepareApplication(job: Job): Promise<ApplicationPack> {
