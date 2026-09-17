@@ -174,6 +174,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .principles p { margin: 9px 0 0; color: #4c513b; font-size: 12px; line-height: 1.7; }
 
 .education-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.certification-card { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 18px; padding: 28px; border: 1px solid var(--lime); border-radius: 18px; background: #101319; }
+.certification-card h3 { margin: 8px 0 12px; font-size: clamp(22px, 3vw, 30px); letter-spacing: -.04em; }
+.certification-card p:not(.section-label) { max-width: 600px; color: #a7adba; font-size: 13px; line-height: 1.7; }
+.certification-card small { color: #9299a5; font-size: 11px; }
 .education-grid article { display: grid; grid-template-columns: 48px 1fr; gap: 23px; min-height: 285px; padding: 29px; border: 1px solid var(--line); border-radius: 18px; background: #101319; }
 .education-number { color: var(--lime); font-family: var(--font-mono); font-size: 10px; }
 .education-grid p { margin: 0 0 20px; color: #6e7581; font-family: var(--font-mono); font-size: 9px; }

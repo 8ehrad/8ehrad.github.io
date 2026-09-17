@@ -1,4 +1,5 @@
 <script lang="ts">
+    import certification from '$lib/data/certification.json';
 	import { education, experience, principles, profile, projects, proofPoints, skillGroups } from '$lib/data/portfolio';
 
 	const openTwin = () => (document.querySelector<HTMLButtonElement>('.chat-launcher')?.click());
@@ -159,8 +160,17 @@
 
 <section class="section education-section shell">
 	<div class="section-heading compact">
-		<div><p class="section-label">05 / FOUNDATIONS</p><h2>Education & recognition.</h2></div>
+		<div><p class="section-label">05 / FOUNDATIONS</p><h2>Education & certifications.</h2></div>
 	</div>
+	<article class="certification-card">
+		<div>
+			<p class="section-label">GOOGLE CLOUD CERTIFIED · SEPTEMBER 2026</p>
+			<h3>{certification.name}</h3>
+			<p>Data-system design, batch and streaming pipelines, storage, governance and reliable cloud workloads.</p>
+			<small>Issued 17 September 2026 · Valid until 17 September 2028</small>
+		</div>
+		<a class="button secondary" href={certification.credential_url} target="_blank" rel="noopener noreferrer">Verify credential ↗</a>
+	</article>
 	<div class="education-grid">
 		{#each education as item, index}
 			<article>
