@@ -9,14 +9,16 @@
 		updateJob
 	} from '$lib/career/api';
 	import SystemMetrics from '$lib/career/SystemMetrics.svelte';
+	import PipelineDashboard from '$lib/career/PipelineDashboard.svelte';
 	import type { ApplicationPack, Job, JobStatus } from '$lib/career/types';
 
-	type View = 'recommended' | 'shortlisted' | 'applications' | 'archived' | 'system';
+	type View = 'recommended' | 'shortlisted' | 'applications' | 'archived' | 'system' | 'pipeline';
 	const views: Array<{ id: View; label: string }> = [
 		{ id: 'recommended', label: 'Recommendations' },
 		{ id: 'shortlisted', label: 'Shortlist' },
 		{ id: 'applications', label: 'Applications' },
 		{ id: 'archived', label: 'Archived' },
+		{ id: 'pipeline', label: 'Pipeline' },
 		{ id: 'system', label: 'System' }
 	];
 	let jobs: Job[] = [];
@@ -172,8 +174,8 @@
 			<div class="run-status">
 				<i />
 				<div>
-					<strong>{isDemoMode() ? 'Demo dataset' : 'Pipeline active'}</strong><span
-						>Runs every other day</span
+					<strong>{isDemoMode() ? 'Demo dataset' : 'Private career workspace'}</strong><span
+						>Live health in the Pipeline tab</span
 					>
 				</div>
 				{#if isAuthConfigured()}<button on:click={logout}>Sign out</button>{/if}
@@ -195,7 +197,7 @@
 				<p>roles under review</p>
 			</article>
 			<article>
-				<span>03 / PIPELINE</span><strong>{pipelineCount}</strong>
+				<span>03 / APPLICATIONS</span><strong>{pipelineCount}</strong>
 				<p>active applications</p>
 			</article>
 			<article>
@@ -214,7 +216,9 @@
 
 		{#if error}<div class="error-banner shell" role="alert">{error}</div>{/if}
 
-		{#if view === 'system'}
+		{#if view === 'pipeline'}
+			<div class="shell"><PipelineDashboard /></div>
+		{:else if view === 'system'}
 			<div class="shell"><SystemMetrics /></div>
 		{:else if loading}
 			<div class="loading shell"><i /><span>Loading recommendations</span></div>
