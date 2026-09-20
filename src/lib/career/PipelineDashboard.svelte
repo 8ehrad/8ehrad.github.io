@@ -34,8 +34,10 @@
   ['deep_analysis_cache_misses_never_analyzed', 'Never deeply analysed cache misses'],
   ['deep_analysis_cache_misses_changed', 'Changed analysis identity'],
   ['deep_analysis_dispatched', 'Dispatched for analysis'], ['deep_analysis_deferred', 'Deferred to backlog'],
-  ['deep_analysis_succeeded', 'Fresh analysis succeeded'], ['deep_analysis_failed', 'Recorded analysis failures / deferrals'],
-  ['analysis_tasks_timed_out', 'Tasks timed out'], ['qualified_shortlist', 'Qualified recommendations'],
+  ['deep_analysis_succeeded', 'Fresh analysis succeeded'], ['analysis_budget_deferred', 'Deferred by daily budget'],
+  ['analysis_deadline_timed_out', 'Exceeded analysis deadline'],
+  ['deep_analysis_failed', 'No analysis result (all reasons)'],
+  ['analysis_tasks_timed_out', 'Returned to backlog (all reasons)'], ['qualified_shortlist', 'Qualified recommendations'],
   ['new_recommendations', 'First-time recommendations'], ['digest_included', 'Included in digest']
  ];
  onMount(() => {
@@ -182,6 +184,7 @@
  </section>
 
  <section class="panel"><h3>Daily analysis budget</h3><p>{data.budget.budget_date || 'Unknown'} · {data.budget.timezone || 'Unknown timezone'}. Committed includes reservations; actual records reconciled responses. Cost uses configured token prices—not the total AWS bill.</p>
+ <p class="note">Discovery call allocation: {data.budget.usage?.discovery_state === 'reserved' ? '25 call slots held for discovery until it finishes' : data.budget.usage?.discovery_state === 'released' ? 'Discovery finished; unused call slots available to backlog' : data.budget.usage?.discovery_state === 'none' ? 'No scheduled discovery today' : 'Schedule plan unavailable; 25 call slots held conservatively'}. The other token and cost limits still apply.</p>
  <div class="table-scroll"><table><thead><tr><th>Resource</th><th>Committed</th><th>Actual recorded</th><th>Limit</th><th>Remaining</th></tr></thead><tbody>
   {#each ['calls', 'input_tokens', 'output_tokens', 'cost_microusd'] as key}<tr><td>{pretty(key)}</td>
    <td>{key === 'cost_microusd' ? money(data.budget.usage?.[key + '_committed']) : count(typeof data.budget.usage?.[key + '_committed'] === 'number' ? Number(data.budget.usage?.[key + '_committed']) : data.budget.ledger_present === false ? 0 : null)}</td>

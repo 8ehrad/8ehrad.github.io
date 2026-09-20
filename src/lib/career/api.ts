@@ -1,5 +1,5 @@
 import { demoJobs } from './demo';
-import { token } from './auth';
+import { expireSession, token } from './auth';
 import type { ApplicationPack, Job, JobStatus } from './types';
 
 const apiUrl = (import.meta.env.VITE_CAREER_API_URL || '').replace(/\/$/, '');
@@ -10,6 +10,9 @@ export function isDemoMode(): boolean {
 
 export async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
 	const idToken = token();
+	if (!idToken) {
+		throw new Error('Your session has expired. Please sign in again.');
+	}
 	const response = await fetch(`${apiUrl}${path}`, {
 		...options,
 		headers: {
@@ -19,8 +22,12 @@ export async function request<T>(path: string, options: RequestInit = {}): Promi
 		}
 	});
 	if (!response.ok) {
-		const error = await response.json().catch(() => ({ detail: response.statusText }));
-		throw new Error(error.detail || 'Request failed');
+		if (response.status === 401 || response.status === 403) {
+			expireSession();
+			throw new Error('Your session has expired. Please sign in again.');
+		}
+		const error = await response.json().catch(() => null);
+		throw new Error(error?.detail || error?.message || response.statusText || `Request failed (${response.status})`);
 	}
 	return response.json();
 }

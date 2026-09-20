@@ -5,6 +5,7 @@ const clientId = import.meta.env.VITE_COGNITO_CLIENT_ID || '';
 const redirectUri = import.meta.env.VITE_COGNITO_REDIRECT_URI || '';
 const verifierKey = 'career_pkce_verifier';
 const stateKey = 'career_oauth_state';
+export const sessionExpiredEvent = 'career-session-expired';
 
 function encode(value: ArrayBuffer): string {
 	return btoa(String.fromCharCode(...new Uint8Array(value))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
@@ -15,7 +16,24 @@ export function isAuthConfigured(): boolean {
 }
 
 export function token(): string | null {
-	return browser ? sessionStorage.getItem('career_id_token') : null;
+	if (!browser) return null;
+	const value = sessionStorage.getItem('career_id_token');
+	if (!value) return null;
+	try {
+		const payload = JSON.parse(atob(value.split('.')[1].replace(/-/g, '+').replace(/_/g, '/')));
+		if (typeof payload.exp === 'number' && payload.exp * 1000 > Date.now()) return value;
+	} catch {
+		// An unreadable token is unusable; ask for a fresh sign-in.
+	}
+	expireSession();
+	return null;
+}
+
+export function expireSession(): void {
+	if (!browser) return;
+	sessionStorage.removeItem('career_id_token');
+	sessionStorage.removeItem('career_access_token');
+	window.dispatchEvent(new Event(sessionExpiredEvent));
 }
 
 export async function login(): Promise<void> {

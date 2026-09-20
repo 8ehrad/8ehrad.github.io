@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { completeLogin, isAuthConfigured, login, logout, token } from '$lib/career/auth';
+	import { completeLogin, isAuthConfigured, login, logout, sessionExpiredEvent, token } from '$lib/career/auth';
 	import {
 		getApplicationPack,
 		isDemoMode,
@@ -29,7 +29,7 @@
 	let packLoadingJobId = '';
 	let error = '';
 	let pack: ApplicationPack | null = null;
-	let authenticated = isDemoMode() || Boolean(token());
+	let authenticated = isDemoMode();
 
 	$: visibleJobs = jobs.filter((job) => {
 		if (view === 'recommended') return job.status === 'recommended';
@@ -46,8 +46,21 @@
 		['applied', 'recruiter_response', 'interview', 'offer'].includes(job.status)
 	).length;
 
-	onMount(async () => {
+	onMount(() => {
+		const sessionExpired = () => {
+			authenticated = false;
+			jobs = [];
+			selected = null;
+			pack = null;
+			error = 'Your session has expired. Please sign in again.';
+		};
+		window.addEventListener(sessionExpiredEvent, sessionExpired);
+		const expiryCheck = window.setInterval(() => {
+			if (authenticated && !isDemoMode()) token();
+		}, 30000);
+		void (async () => {
 		try {
+			authenticated = isDemoMode() || Boolean(token());
 			const params = new URLSearchParams(window.location.search);
 			const code = params.get('code');
 			const requested = params.get('job');
@@ -68,6 +81,11 @@
 		} finally {
 			loading = false;
 		}
+		})();
+		return () => {
+			window.clearInterval(expiryCheck);
+			window.removeEventListener(sessionExpiredEvent, sessionExpired);
+		};
 	});
 
 	function salary(job: Job): string {
