@@ -70,6 +70,7 @@
 				window.history.replaceState({}, '', '/career');
 				await completeLogin(code, params.get('state'));
 				authenticated = true;
+				error = '';
 			}
 			if (authenticated) {
 				jobs = await listJobs();
