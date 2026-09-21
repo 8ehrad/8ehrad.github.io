@@ -30,6 +30,12 @@ export type Schedule = Section & {
 export type Operations = {
  schema_version: number; generated_at: string; snapshot_id: string;
  analysis: TaskSummary; hydration: TaskSummary;
+ freshness?: { status: string; mode?: string; complete?: boolean; observed?: number;
+  state_counts?: Record<string, number>; by_source?: Record<string, Record<string, number>>;
+  pending?: number; oldest_overdue_seconds?: number; observed_at?: string;
+  items?: { key: string; source: string; title: string; state: string; requested: boolean;
+   latest?: { outcome: string; at: number; reason: string }; last_positive_at?: number;
+   next_check_at?: number }[] };
  queues: Section & { items?: Queue[] };
  schedules: Section & { items?: Schedule[] };
  alarms: Section & { items?: { name: string; state: string; reason?: string }[] };

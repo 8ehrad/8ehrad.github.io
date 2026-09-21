@@ -38,7 +38,11 @@
   ['analysis_deadline_timed_out', 'Exceeded analysis deadline'],
   ['deep_analysis_failed', 'No analysis result (all reasons)'],
   ['analysis_tasks_timed_out', 'Returned to backlog (all reasons)'], ['qualified_shortlist', 'Qualified recommendations'],
-  ['new_recommendations', 'First-time recommendations'], ['digest_included', 'Included in digest']
+  ['new_recommendations', 'First-time recommendations'], ['digest_included', 'Included in digest'],
+  ['freshness_analysis_evaluated', 'Freshness observed before analysis (shadow)'],
+  ['freshness_analysis_would_hold', 'Would need verification before analysis (not withheld)'],
+  ['freshness_digest_evaluated', 'Freshness observed before digest (shadow)'],
+  ['freshness_digest_would_hold', 'Would need verification before digest (not withheld)']
  ];
  onMount(() => {
   void refresh(); void loadCoverage();
@@ -133,6 +137,27 @@
   <h3>Reed description tasks</h3><ul>{#each Object.entries(data.hydration.status_counts || {}) as [state, value]}<li>{pretty(state)}: {count(value, data.hydration.complete)}</li>{/each}</ul>
   <h3>Completed detail fetch → admission outcome</h3><ul>{#each Object.entries(data.hydration.ready_outcomes || {}) as [state, value]}<li>{pretty(state)}: {count(value, data.hydration.complete)}</li>{/each}</ul>
  </details>
+
+ <section class="panel" aria-label="Vacancy freshness"><h3>Vacancy freshness · observation only</h3>
+  <p>Monitoring does not withhold recommendations or change application status. Counts are source vacancy IDs we have monitored—not all discovered jobs or unique canonical jobs. Current means positive source evidence within 24 hours; missing and blocked responses do not confirm closure.</p>
+  {#if data.freshness?.mode === 'observe' && data.freshness.status !== 'unavailable'}
+   <p>Monitored: {count(data.freshness.observed, data.freshness.complete)} · checks pending: {count(data.freshness.pending, data.freshness.complete)} · {displayTime(data.freshness.observed_at)}</p>
+   <ul>{#each Object.entries(data.freshness.state_counts || {}) as [state, value]}<li>{pretty(state)}: {count(value, data.freshness.complete)}</li>{/each}</ul>
+   <div class="table-scroll"><table><thead><tr><th>Source</th><th>Latest recorded outcomes</th></tr></thead><tbody>
+    {#each Object.entries(data.freshness.by_source || {}) as [source, values]}<tr><td>{source}</td><td>{#each Object.entries(values) as [outcome, value]}<span>{pretty(outcome)}: {count(value, data.freshness.complete)}; </span>{/each}</td></tr>{/each}
+   </tbody></table></div>
+   <details><summary>Evidence and next check — first 50 monitored records</summary><p>Stable ID order, not a priority list. A next-check time is eligibility, not a promised execution time. Earlier positive evidence is retained after a failed check.</p>
+    <div class="table-scroll"><table><thead><tr><th>Vacancy / source</th><th>State</th><th>Last positive</th><th>Latest outcome / reason</th><th>Next eligible check</th></tr></thead><tbody>
+     {#each (data.freshness.items || []).slice(0, 50) as item}<tr><td>{item.title}<small>{item.source}</small></td><td>{pretty(item.state)}</td>
+      <td>{item.last_positive_at ? displayTime(new Date(item.last_positive_at * 1000).toISOString()) : 'Never verified'}</td>
+      <td>{pretty(item.latest?.outcome || 'unchecked')}<small>{item.latest?.reason || ''}</small></td>
+      <td>{item.next_check_at ? displayTime(new Date(item.next_check_at * 1000).toISOString()) : 'Unknown'}<small>{item.requested ? 'Pending' : 'Not queued'}</small></td></tr>{/each}
+    </tbody></table></div>
+   </details>
+   {#if data.freshness.complete === false}<p class="warning">Bounded read incomplete: counts are lower bounds, not whole-database totals.</p>{/if}
+  {:else if data.freshness?.mode === 'off'}<p>Freshness monitoring is disabled. No counts are implied.</p>
+  {:else}<p class="warning">Freshness telemetry unavailable or not yet deployed. Unknown is not zero.</p>{/if}
+ </section>
 
  <section class="panel"><h3>Transport queues</h3><p>Approximate SQS messages, not unique jobs. In-flight means received but not acknowledged; deliveries can include retries. Age is the latest available five-minute maximum, not original listing age.</p>
   <div class="table-scroll"><table><thead><tr><th>Stage / unit</th><th>Waiting</th><th>In flight</th><th>Delayed</th><th>Oldest (minutes)</th><th>Deliveries / hour</th><th>Telemetry</th></tr></thead><tbody>
