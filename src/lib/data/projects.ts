@@ -4,6 +4,26 @@ import type { Project } from '../types';
 
 export const items: Array<Project> = [
 	{
+		slug: 'career-agent',
+		color: '#7c5cff',
+		description: `
+- Built and deployed a personal career intelligence system that discovers UK data and AI roles across licensed job APIs and verified employer ATS feeds.
+- Designed durable, asynchronous AWS pipelines for employer collection, advert hydration, evidence-grounded fit analysis, freshness observation and scheduled digests.
+- Added exact-result caching, atomic daily model budgets, retry-safe SQS workers, DynamoDB persistence, private S3 storage and low-cardinality operational telemetry.
+- Built an authenticated Svelte dashboard for recommendations, application workflow and pipeline operations; applications always remain human controlled.
+    `,
+		shortDescription:
+			'I built and deployed an agentic career system that discovers suitable roles, analyses fit against grounded evidence, monitors pipeline health and presents recommendations through an authenticated dashboard.',
+		links: [{ to: '/career', label: 'Live dashboard' }],
+		logo: Assets.AWS,
+		name: 'Career Agent',
+		period: {
+			from: new Date(2026, 7, 2)
+		},
+		skills: getSkills('python', 'aws'),
+		type: 'Agentic AI and Cloud Engineering'
+	},
+	{
 		slug: 'lstm-research',
 		color: '#5e95e3',
 		description: `

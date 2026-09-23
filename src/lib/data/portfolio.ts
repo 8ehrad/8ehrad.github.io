@@ -109,6 +109,16 @@ export const experience: ExperienceItem[] = [
 
 export const projects: ProjectItem[] = [
 	{
+		name: 'Career Agent',
+		eyebrow: 'Agentic career intelligence',
+		description:
+			'A deployed personal career system that discovers UK data and AI roles, verifies eligibility and freshness, runs evidence-grounded fit analysis, and turns the strongest opportunities into an authenticated workflow and scheduled digest.',
+		proof: '97 active employer feeds · Durable async pipelines · Evidence-grounded analysis',
+		stack: ['Python', 'AWS Lambda', 'Bedrock', 'SQS', 'DynamoDB', 'S3', 'Terraform', 'Svelte'],
+		href: '/career',
+		featured: true
+	},
+	{
 		name: 'Alex Financial Advisor',
 		eyebrow: 'Production-style agentic AI',
 		description:
